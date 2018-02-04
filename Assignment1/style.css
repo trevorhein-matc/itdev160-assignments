@@ -1,0 +1,14 @@
+blockquote.right {
+  text-align: right;
+  margin-left: 40%;
+}
+
+blockquote.left {
+  text-align: left;
+  margin-right: 40%;
+}
+
+div.blockquoteColumn {
+  margin: auto;
+  width: 60%;
+}
