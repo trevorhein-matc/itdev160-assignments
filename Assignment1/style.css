@@ -10,5 +10,10 @@ blockquote.left {
 
 div.blockquoteColumn {
   margin: auto;
-  width: 60%;
+  width: 90%;
+}
+
+div.mainColumn {
+  margin: auto;
+  width: 80%;
 }
