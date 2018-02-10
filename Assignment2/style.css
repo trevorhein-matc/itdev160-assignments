@@ -2,3 +2,39 @@ img {
   max-width: 200px;
   height: auto;
 }
+
+.involved
+{
+  background-color: black;
+}
+
+.africa
+{
+  background-color: green;
+}
+
+.asia
+{
+  background-color: pink;
+}
+
+.centralAm
+{
+  background-color: yellow;
+}
+
+.oceania
+{
+  background-color: blue;
+}
+
+.southAm
+{
+  background-color: orange;
+}
+
+
+table.complex
+{
+
+}
