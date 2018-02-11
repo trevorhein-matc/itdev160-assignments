@@ -5,42 +5,57 @@ img {
 
 .involved
 {
-  background-color: black;
+  background-color:   #283442;
 }
 
 .africa
 {
-  background-color: green;
+  background-color:   #2F97C1;
 }
 
 .asia
 {
-  background-color: pink;
+  background-color:   #0CF574;
 }
 
 .centralAm
 {
-  background-color: yellow;
+  background-color: #1ccad8;
 }
 
 .oceania
 {
-  background-color: blue;
+  background-color: #cbac88;
 }
 
 .southAm
 {
-  background-color: orange;
+  background-color: #134074;
+}
+
+th
+{
+  min-width: 3em;
+}
+
+td
+{
+  white-space: nowrap;
+  max-width: 6em;
+  height: 1.75em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap:
 }
 
 .rotate {
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  width: .5em;
   margin: auto;
   height: 100%;
 }
+
 .rotate div {
      -moz-transform: rotate(-90.0deg);  /* FF3.5+ */
        -o-transform: rotate(-90.0deg);  /* Opera 10.5 */
@@ -50,5 +65,5 @@ img {
 
          margin: auto;
          height: 100%;
-         line-height: 40px;
+         line-height: 2.25em;
 }
