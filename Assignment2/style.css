@@ -1,5 +1,5 @@
 img {
-  max-width: 200px;
+  max-width: 500px;
   height: auto;
 }
 
@@ -66,4 +66,8 @@ td
          margin: auto;
          height: 100%;
          line-height: 2.25em;
+}
+
+a {
+  text-decoration: none;
 }
