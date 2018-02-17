@@ -5,3 +5,20 @@ img {
 .carousel-inner {
   background-color: rgb(33, 33, 37);
 }
+
+#carousel-bottom-bar {
+  background-color: #343a40;
+}
+
+div#carousel-bottom-bar h2 {
+  margin-left: 16px;
+  color: white;
+}
+
+.col-margin {
+  margin-right: auto;
+}
+
+ul {
+  padding-left: 15px;
+}
