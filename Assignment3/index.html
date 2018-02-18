@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../master.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|PT+Sans" rel="stylesheet">
     </style>
   </head>
   <body>
@@ -52,10 +52,10 @@
 
       <!-- Images Carousel -->
 
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-md">
-            <div class="col-md-12 mx-auto">
+          <div class="col-md carousel-fill">
+            <div class="col-md-12 carousel-fill mx-auto">
                 <div id="carouselPics" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators"> <!-- Carousel Tabs -->
                         <li data-target="#carouselPics" data-slide-to="0" class="active"></li>
@@ -67,27 +67,34 @@
                     <div class="carousel-item active">
                       <img class="d-block image-fluid mx-auto" src="../images/sloth1.jpg" alt="First slide">
                       <div class="carousel-caption d-none d-md-block">
+                        <a href="#bernie-box">
                         <h5>Bernie</h5>
                         <p>A thoughtful introvert</p>
+                        </a>
                       </div>
                     </div>
                     <div class="carousel-item">
                       <img class="d-block image-fluid mx-auto" src="../images/sloth2.jpg" alt="Second slide">
                       <div class="carousel-caption d-none d-md-block">
+                        <a href="#zoey-box">
                         <h5>Zoey</h5>
                         <p>A playful scamp</p>
+                        </a>
                       </div>
                     </div>
                     <div class="carousel-item">
                         <img class="d-block image-fluid mx-auto" id="carouselImgPad" src="../images/sloth3.jpg" alt="Third slide">
                         <div class="carousel-caption d-none d-md-block">
+                          <a href="#agatha-box">
                           <h5>Agatha</h5>
                           <p>Great for a cuddle</p>
+                          </a>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img class="d-block image-fluid mx-auto" src="../images/sloth4.jpg">
                         <div class="carousel-caption d-none d-md-block">
+                          <a href="#carl-box">
                           <h5>Carl</h5>
                           <p>Thinks he is the best or something</p>
                         </div>
@@ -117,42 +124,30 @@
 
 <!-- Ratings Box 1 -->
 
-    <div class="container">
+    <div class="container sloth-box" id="bernie-box">
       <div class="row">
-        <div class="col-5">
+        <div class="col-5 col-sm">
           <figure class="figure">
             <img src="../images/sloth1.jpg" class="figure-img img-fluid rounded" alt="Bernie">
             <figcaption class="figure-caption">Bernie</figcaption>
           </figure>
         </div>
-        <div class="col-7">
-          <div class="container">
+        <div class="col-7 col-sm-12">
+          <div class="container-fluid">
             <div class="row">
-              <div class="col">
-                <h2>Bernie</h2>
-              </div>
+              <h2>Bernie</h2>
             </div>
             <div class="row">
-              <div class="col-3">
-                <h5>Country:</h5>
-              </div>
-              <div class="col-9">
-                <h5>Bolivia</h5>
-              </div>
+              <h5>Country: Bolivia</h5>
             </div>
             <div class="row">
-              <div class="col-3">
-                <h5>Age:</h5>
-              </div>
-              <div class="col-9">
-                <h5>10</h5>
-              </div>
+                <h5>Age: 10</h5>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-12">
                 <h5>Hobbies:</h5>
               </div>
-              <div class="col-9">
+              <div class="col-md-9 col-sm-12">
                 <ul>
                   <li>Contemplating the meaning of life</li>
                   <li>Philosophizing</li>
@@ -160,18 +155,10 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-12">
                 <h5>Personality:</h5>
               </div>
-              <div class="col-9">
-                <p>Bernie is thoughtful and medatative. He is slow and deliberate in his decisions.</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-3">
-                <h5>Ratings:</h5>
-              </div>
-              <div class="col-9">
+              <div class="col-md-9 col-sm-12">
                 <p>Bernie is thoughtful and medatative. He is slow and deliberate in his decisions.</p>
               </div>
             </div>
@@ -186,13 +173,13 @@
                   <div class="container-fluid">
                     <div class="row">
                       <blockquote class="blockquote">
-                        <p class="mb-0">He only seems irreverent. Really, there is nothing going on there.</p>
+                        <p class="mb-0 neg-review">He only seems irreverent. Really, there is nothing going on there.</p>
                         <footer class="blockquote-footer"><cite title="Source Title">Jim</cite></footer>
                       </blockquote>
                     </div>
                     <div class="row">
                       <blockquote class="blockquote text-right">
-                        <p class="mb-0">Don't mistake his indecision for intelligence.</p>
+                        <p class="mb-0 neg-review">Don't mistake his indecision for intelligence.</p>
                         <footer class="blockquote-footer"><cite title="Source Title">Jessica</cite></footer>
                       </blockquote>
                     </div>
@@ -207,42 +194,30 @@
 
 <!-- Ratings Box 2 -->
 
-    <div class="container">
+    <div class="container sloth-box" id="zoey-box">
       <div class="row">
-        <div class="col-5">
+        <div class="col-5 col-sm-12">
           <figure class="figure">
             <img src="../images/sloth2.jpg" class="figure-img img-fluid rounded" alt="Zoey">
             <figcaption class="figure-caption">Zoey</figcaption>
           </figure>
         </div>
-        <div class="col-7">
-          <div class="container">
+        <div class="col-7 col-sm-12">
+          <div class="container-fluid">
             <div class="row">
-              <div class="col">
-                <h2>Zoey</h2>
-              </div>
+              <h2>Zoey</h2>
             </div>
             <div class="row">
-              <div class="col-3">
-                <h5>Country:</h5>
-              </div>
-              <div class="col-9">
-                <h5>Ecuador</h5>
-              </div>
+              <h5>Country: Ecuador</h5>
             </div>
             <div class="row">
-              <div class="col-3">
-                <h5>Age:</h5>
-              </div>
-              <div class="col-9">
-                <h5>6</h5>
-              </div>
+                <h5>Age: 6</h5>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-12">
                 <h5>Hobbies:</h5>
               </div>
-              <div class="col-9">
+              <div class="col-md-9 col-sm-12">
                 <ul>
                   <li>Hanging out</li>
                   <li>Surprising other sloths</li>
@@ -250,12 +225,13 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-12">
                 <h5>Personality:</h5>
               </div>
-              <div class="col-9">
+              <div class="col-md-9 col-sm-12">
                 <p>Playful and fun loving. She enjoys looking at the world differently.</p>
               </div>
+            </div>
               <div class="container-fluid">
                 <nav>
                   <div class="nav nav-tabs" role="tablist">
@@ -267,13 +243,13 @@
                     <div class="container-fluid">
                       <div class="row">
                         <blockquote class="blockquote">
-                          <p class="mb-0">Playful and adventurous.</p>
+                          <p class="mb-0 pos-review">Playful and adventurous.</p>
                           <footer class="blockquote-footer"><cite title="Source Title">Kyle</cite></footer>
                         </blockquote>
                       </div>
                       <div class="row">
                         <blockquote class="blockquote text-right">
-                          <p class="mb-0">She is too much energy for me.</p>
+                          <p class="mb-0 neg-review">She is too much energy for me.</p>
                           <footer class="blockquote-footer"><cite title="Source Title">Anonymous</cite></footer>
                         </blockquote>
                       </div>
@@ -289,42 +265,30 @@
 
 <!-- Ratings Box 3 -->
 
-    <div class="container">
+    <div class="container sloth-box" id="agatha-box">
       <div class="row">
-        <div class="col-5">
+        <div class="col-5 col-sm-12">
           <figure class="figure">
             <img src="../images/sloth3.jpg" class="figure-img img-fluid rounded" alt="Agatha">
             <figcaption class="figure-caption">Agatha</figcaption>
           </figure>
         </div>
-        <div class="col-7">
-          <div class="container">
+        <div class="col-7 col-sm-12">
+          <div class="container-fluid">
             <div class="row">
-              <div class="col">
-                <h2>Agatha</h2>
-              </div>
+              <h2>Agatha</h2>
             </div>
             <div class="row">
-              <div class="col-3">
-                <h5>Country:</h5>
-              </div>
-              <div class="col-9">
-                <h5>El Salvador</h5>
-              </div>
+              <h5>Country: El Salvador</h5>
             </div>
             <div class="row">
-              <div class="col-3">
-                <h5>Age:</h5>
-              </div>
-              <div class="col-9">
-                <h5>12</h5>
-              </div>
+                <h5>Age: 12</h5>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-12">
                 <h5>Hobbies:</h5>
               </div>
-              <div class="col-9">
+              <div class="col-md-9 col-sm-12">
                 <ul>
                   <li>Lounging</li>
                   <li>Snuggling</li>
@@ -332,12 +296,13 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-3">
+              <div class="col-md-3 col-sm-12">
                 <h5>Personality:</h5>
               </div>
-              <div class="col-9">
+              <div class="col-md-9 col-sm-12">
                 <p>Agatha enjoys taking it easy. She can take a nap literally anywhere.</p>
               </div>
+            </div>
               <div class="container-fluid">
                 <nav>
                   <div class="nav nav-tabs" role="tablist">
@@ -349,13 +314,13 @@
                     <div class="container-fluid">
                       <div class="row">
                         <blockquote class="blockquote">
-                          <p class="mb-0">A sweet homebody.</p>
+                          <p class="mb-0 pos-review">A sweet homebody.</p>
                           <footer class="blockquote-footer"><cite title="Source Title">Jim</cite></footer>
                         </blockquote>
                       </div>
                       <div class="row">
                         <blockquote class="blockquote text-right">
-                          <p class="mb-0">I like to nap as much as anyone but living life like Agath should be a sin.</p>
+                          <p class="mb-0 neg-review">I like to nap as much as anyone but living life like Agath should be a sin.</p>
                           <footer class="blockquote-footer"><cite title="Source Title">Jessica</cite></footer>
                         </blockquote>
                       </div>
@@ -369,75 +334,65 @@
       </div>
     </div>
 
-<!-- Ratings Box 4 -->
+    <!-- Ratings Box 4 -->
 
-    <div class="container">
-      <div class="row">
-        <div class="col-5">
-          <figure class="figure">
-            <img src="../images/sloth4.jpg" class="figure-img img-fluid rounded" alt="Carl.">
-            <figcaption class="figure-caption">Carl</figcaption>
-          </figure>
-        </div>
-        <div class="col-7">
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <h2>Carl</h2>
-              </div>
+        <div class="container sloth-box" id="carl-box">
+          <div class="row">
+            <div class="col-5 col-sm-12">
+              <figure class="figure">
+                <img src="../images/sloth4.jpg" class="figure-img img-fluid rounded" alt="Carl.">
+                <figcaption class="figure-caption">Carl</figcaption>
+              </figure>
             </div>
-            <div class="row">
-              <div class="col-md-3">
-                <h5>Country:</h5>
-              </div>
-              <div class="col-md-9">
-                <h5>Columbia</h5>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3">
-                <h5>Age:</h5>
-              </div>
-              <div class="col-md-9">
-                <h5>8</h5>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3">
-                <h5>Hobbies:</h5>
-              </div>
-              <div class="col-md-9">
-                <ul>
-                  <li>Goofing around</li>
-                  <li>Being too cool for school</li>
-                </ul>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3">
-                <h5>Personality:</h5>
-              </div>
-              <div class="col-md-9">
-                <p>Carl has an I don't care bad boy attitude that some find endearing and others enraging.</p>
-              </div>
+            <div class="col-7 col-sm-12">
               <div class="container-fluid">
-                <nav>
-                  <div class="nav nav-tabs" role="tablist">
-                    <a class="nav-item nav-link" id="carl-review" data-toggle="tab" href="#carl-home" role="tab" aria-controls="carl-home" aria-selected="true">Reviews</a>
+                <div class="row">
+                  <h2>Carl</h2>
+                </div>
+                <div class="row">
+                  <h5>Country: Columbia</h5>
+                </div>
+                <div class="row">
+                    <h5>Age: 8</h5>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 col-sm-12">
+                    <h5>Hobbies:</h5>
                   </div>
-                </nav>
-                <div class="tab-content" id="nav-tabContent">
-                  <div class="tab-pane fade show" id="carl-home" role="tabpanel" aria-labelledby="carl-review">
-                    <div class="container-fluid">
-                      <div class="row">
-                        <blockquote class="blockquote">
-                          <p class="mb-0">Who does this guy think he is? He acts like doing nothing is the new cool thing.</p>
-                          <footer class="blockquote-footer"><cite title="Source Title">Bruce</cite></footer>
-                        </blockquote>
-                        <blockquote class="blockquote text-right">
-                          <p class="mb-0">I don't know what it is but I want him to break my heart.</p>
-                          <footer class="blockquote-footer"><cite title="Source Title">Ruth</cite></footer>
-                        </blockquote>
+                  <div class="col-md-9 col-sm-12">
+                    <ul>
+                      <li>Goofing around</li>
+                      <li>Being too cool for school</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 col-sm-12">
+                    <h5>Personality:</h5>
+                  </div>
+                  <div class="col-md-9 col-sm-12">
+                    <p>Carl has an I don't care bad boy attitude that some find endearing and others enraging.</p>
+                  </div>
+                </div>
+                <div class="container-fluid">
+                  <nav>
+                    <div class="nav nav-tabs" role="tablist">
+                      <a class="nav-item nav-link" id="carl-review" data-toggle="tab" href="#carl-home" role="tab" aria-controls="carl-home" aria-selected="true">Reviews</a>
+                    </div>
+                  </nav>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show" id="carl-home" role="tabpanel" aria-labelledby="carl-review">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <blockquote class="blockquote">
+                            <p class="mb-0 neg-review">Who does this guy think he is? He acts like doing nothing is the new cool thing.</p>
+                            <footer class="blockquote-footer"><cite title="Source Title">Bruce</cite></footer>
+                          </blockquote>
+                          <blockquote class="blockquote text-right">
+                            <p class="mb-0 pos-review">I don't know what it is but I want him to break my heart.</p>
+                            <footer class="blockquote-footer"><cite title="Source Title">Ruth</cite></footer>
+                          </blockquote>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -446,8 +401,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
     </main>
 
