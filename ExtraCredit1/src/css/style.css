@@ -1,9 +1,9 @@
 .brand-primary {
-  color: #00FFC4;
+  color: #00FFC4 !important;
 }
 
-.link-color {
-  color: #00FFC4;
+.text-primary {
+  color: #00FFC4 !important;
 }
 
 body {
