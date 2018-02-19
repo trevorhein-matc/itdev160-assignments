@@ -1,0 +1,21 @@
+body {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #d5e0f2;
+}
+
+main {
+  background-color: darkgray;
+}
+
+h1 {
+  color: #143770;
+}
+
+h2 {
+ color: #cc7d10;
+}
+
+p {
+ color: fuchsia;
+}
