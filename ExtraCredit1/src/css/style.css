@@ -10,3 +10,8 @@ body {
   font-family: "Raleway", Roboto, Arial, sans-serif;
   background-color: #1A1B1D;
 }
+
+.navButtonStyle {
+  font-size: 2em;
+  color:  #00FFC4;
+}
