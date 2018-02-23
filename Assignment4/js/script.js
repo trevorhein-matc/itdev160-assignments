@@ -2,27 +2,17 @@
 
 // Grabs the current date and time
 var today = new Date();
-var hourNow = today.getHours();
-var greeting;
 
-if (hourNow > 17){
-  greeting = 'Good evening ';
-}
-else if (hourNow > 12) {
-  greeting = 'Good afternoon ';
-}
-else if (hourNow > 0) {
-  greeting = 'Good morning ';
-}
-else {
-  greeting = 'Welcome ';
+// Spring Greeting
+var springCheck
+var firstDayOfSpring = new Date();
+firstDayOfSpring.setFullYear(2018, 2, 20);
+
+//If it isn't spring yet use message 1, if after the 1st day of spring, use message 2
+if (firstDayOfSpring > today) {
+  springCheck = "Get a head start on spring!";
+} else {
+  springCheck = "It's not too late. Get these babies in the ground!"
 }
 
-document.write('<h1>' + greeting + '</h2>');
-
-// JS sample Code
-document.write('<h4 style="color: white;">Copyright&copy; 2018</h4>');
-
-document.getElementByID("test").innerHTML = "This is a test.";
-
-document.getElementsByTagName('h1').innerHTML.style.color = 'blue';
+document.getElementById('springGreeting').innerHTML = springCheck;
