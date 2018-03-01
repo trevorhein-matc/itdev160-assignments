@@ -6,6 +6,8 @@ var today = new Date();
 // Spring Greeting
 var springCheck
 var firstDayOfSpring = new Date();
+
+// Sets the 1st day of spring
 firstDayOfSpring.setFullYear(2018, 2, 20);
 
 //If it isn't spring yet use message 1, if after the 1st day of spring, use message 2

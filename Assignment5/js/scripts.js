@@ -3,7 +3,6 @@
     {name: 'Emmet', description: 'Number one code snippet tool.', author: 'emmitio', url: 'https://atom.io/packages/emmet', downloads: 1662209, stars: 2534, image: "url"},
     {name: 'atom-beautify', description: 'It will clean up your code', author: 'Glavin001', url: 'https://atom.io/packages/atom-beautify', downloads: 4230740, stars: 4544, image: "url"},
     {name: 'ask-stack', description: 'Quickly get answers and code samples from Stack Overflow in Atom', author: 'Chris911', url: 'https://atom.io/packages/ask-stack', downloads: 47392, stars: 259, image: "url"},
-
   ];
 
   // Constructor function
@@ -34,7 +33,6 @@
     descEl = getEl(selector + '-description');
 
     nameEl.textContent = package.name;
-
   };
 
   var emmet = new Package(data[0]);
