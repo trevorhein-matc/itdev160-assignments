@@ -134,20 +134,13 @@ function Package(data) {
   };
 }
 
-// Returns today's date, formatted
- var getTodaysDate = function() {
-   var today = new Date();
-   return today.toDateString();
- };
-
- // Returns DOM element by id.
- // We're just wrapping document.getElementById
- // in a shorthand function. If this seems confusing,
- // then just replace getEl with document.getElementById
- // in the writePackageInfo function.
+// Shortcut instead of typing out document.getElementById just use getEl()
  var getEl = function (id) {
    return document.getElementById(id);
  }
+
+
+// The commented code below came from using '/**' above the var writePackageInfo and lets you describe them.
 
  /**
   * Write's the package object's data to the appropriate
@@ -157,6 +150,8 @@ function Package(data) {
   */
  var writePackageInfo = function(package) {
    // Get reference to DOM elements
+   // The selector  is the p_ + the back half of the HTML
+
    var selector = package.selector,
      nameEl = getEl(selector + '-name'),
      descEl = getEl(selector + '-description'),
@@ -170,43 +165,17 @@ function Package(data) {
      nameEl.textContent = package.name;
      descEl.textContent = package.description;
      authEl.textContent = package.author;
-     urlEl.textContent = package.urlEl;
+     urlEl.src = package.urlEl;
      downloadEl.textContent = package.getFormattedDownloads();
      starsEl.textContent = package.getFormattedStars();
-     imageEl.textContent = package.image;
+     imageEl.src = package.image;
  }
 
- /******************************************************
-  * Utilize package data and constuctor objects to
-  * construct each package, then add package data to
-  * the page via DOM functions.
-  ******************************************************/
-
- // Write date
- dateEl = getEl('date');
- dateEl.textContent = getTodaysDate();
-
- /**
-  * Write package data one-by-one or with a for loop.
-  * Remember to comment out the one you don't use.
-  */
-
- // Write package data one-by-one
- var emmet = new Package(data[0]);
- writePackageInfo(emmet);
-
- var beautify = new Package(data[1]);
- writePackageInfo(beautify);
-
-
-
- // continue with eight more packages... OR
-
- // Write package data using for loop
- // for (var i = 0; i < data.length; i++) {
- //   var package = new Package(data[i]);
- //   writePackageInfo(package);
- // }
+ //
+ for (var i = 0; i < data.length; i++) {
+   var package = new Package(data[i]);
+   writePackageInfo(package);
+ }
 
 
 }());
