@@ -113,7 +113,7 @@ var data = [
 ];
 
 
-// None of this makes any sense to me at all.
+// This is creating an object for each index in the data array
 
 function Package(data) {
   this.name = data.name;
@@ -122,6 +122,7 @@ function Package(data) {
   this.url = data.url;
   this.downloads = data.downloads;
   this.stars = data.stars;
+  this.image = data.image;
   this.selector = data.selector;
 
   this.getFormattedDownloads = function() {
@@ -132,7 +133,6 @@ function Package(data) {
     return this.stars.toLocaleString();
   };
 }
-
 
 // Returns today's date, formatted
  var getTodaysDate = function() {
@@ -161,15 +161,19 @@ function Package(data) {
      nameEl = getEl(selector + '-name'),
      descEl = getEl(selector + '-description'),
      authEl = getEl(selector + '-author'),
+     urlEl = getEl(selector + '-url'),
      downloadEl = getEl(selector + '-downloads'),
      starsEl = getEl(selector + '-stars');
+     imageEl = getEl(selector + '-image')
 
      // Write package data to DOM elements
      nameEl.textContent = package.name;
      descEl.textContent = package.description;
      authEl.textContent = package.author;
+     urlEl.textContent = package.urlEl;
      downloadEl.textContent = package.getFormattedDownloads();
      starsEl.textContent = package.getFormattedStars();
+     imageEl.textContent = package.image;
  }
 
  /******************************************************
@@ -193,6 +197,8 @@ function Package(data) {
 
  var beautify = new Package(data[1]);
  writePackageInfo(beautify);
+
+
 
  // continue with eight more packages... OR
 
