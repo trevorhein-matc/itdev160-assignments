@@ -36,7 +36,7 @@ var atomBeautify = new Package (
   'https://atom.io/packages/atom-beautify',
   '4,238,988',
   '4,552',
-  ''
+  'images/pic2.png'
 )
 
 //
@@ -56,7 +56,7 @@ var gitTimeMachine = new Package (
   'https://atom.io/packages/git-time-machine',
   '291,174',
   '953',
-  ''
+  'images/pic3.jpg'
 )
 
 //
@@ -75,7 +75,7 @@ var projectManager = new Package (
   'https://atom.io/packages/project-manager',
   '788,717',
   '2,082',
-  ''
+  'images/pic4.jpg'
 )
 
 //
@@ -94,7 +94,7 @@ var highlightSelected = new Package (
   'https://atom.io/packages/highlight-selected',
   '1,046,266',
   '2,743',
-  ''
+  'images/pic5.jpg'
 )
 
 //
@@ -113,7 +113,7 @@ var fileIcons = new Package (
   'https://atom.io/packages/file-icons',
   '4,300,809',
   '4,956',
-  ''
+  'images/pic6.jpg'
 )
 
 //
@@ -132,7 +132,7 @@ var pigments = new Package (
   'https://atom.io/packages/pigments',
   '2,132,755',
   '3334',
-  ''
+  'images/pic7.jpg'
 )
 
 //
@@ -151,7 +151,7 @@ var minimap = new Package (
   'https://atom.io/packages/minimap',
   '4,514,836',
   '5,177',
-  ''
+  'images/pic8.jpg'
 )
 
 //
@@ -170,7 +170,7 @@ var atomTabs = new Package (
   'https://atom.io/packages/expose',
   '62,739',
   '237',
-  ''
+  'images/pic9.jpg'
 )
 
 //
@@ -189,16 +189,16 @@ var paneLayout = new Package (
   'https://atom.io/packages/pane-layout-plus',
   '10,156',
   '46',
-  ''
+  'images/pic10.jpeg'
 )
 
 //
-document.getElementById("p9-name").innerHTML = paneLayout.name;
-document.getElementById("p9-description").innerHTML = paneLayout.description;
-document.getElementById("p9-author").innerHTML = paneLayout.author;
-document.getElementById("p9-url").href = paneLayout.url;
-document.getElementById("p9-downloads").innerHTML = paneLayout.downloads;
-document.getElementById("p9-stars").innerHTML = paneLayout.stars;
-document.getElementById("p9-image").src = paneLayout.image;
+document.getElementById("p10-name").innerHTML = paneLayout.name;
+document.getElementById("p10-description").innerHTML = paneLayout.description;
+document.getElementById("p10-author").innerHTML = paneLayout.author;
+document.getElementById("p10-url").href = paneLayout.url;
+document.getElementById("p10-downloads").innerHTML = paneLayout.downloads;
+document.getElementById("p10-stars").innerHTML = paneLayout.stars;
+document.getElementById("p10-image").src = paneLayout.image;
 
 }());
