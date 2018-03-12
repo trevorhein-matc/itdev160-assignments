@@ -1,0 +1,8 @@
+.out-message {
+  background-color: red;
+}
+
+.in-message {
+  background-color: blue;
+  text-align: right;
+}

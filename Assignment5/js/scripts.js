@@ -165,7 +165,7 @@ function Package(data) {
      nameEl.textContent = package.name;
      descEl.textContent = package.description;
      authEl.textContent = package.author;
-     urlEl.src = package.urlEl;
+     urlEl.href = package.urlEl;
      downloadEl.textContent = package.getFormattedDownloads();
      starsEl.textContent = package.getFormattedStars();
      imageEl.src = package.image;
