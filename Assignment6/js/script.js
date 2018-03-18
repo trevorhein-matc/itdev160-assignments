@@ -11,19 +11,20 @@ function addMessage(event) {
   var messageInput = document.getElementById('message-input');
   var messagesContainerEl = document.getElementById('message-container');
 
+
 // Determins message type based on button clicked.
   switch (event.target.id) {
 
     case 'send-button':
       user = 'Trevor';
       type = 'out';
-      className = 'out-message';
+      className = 'col-6 box out-message';
       break;
 
     case 'reply-button':
       user = 'Chip';
       type = 'in';
-      className = 'in-message';
+      className = 'col-6 box in-message';
       break;
 
     default:
@@ -41,16 +42,23 @@ function addMessage(event) {
 
   // Create Element
   var messageText = document.createTextNode(message.text);
-  var messageDivEl = document.createElement('div');
-  var messageSpanEl = document.createElement('span');
 
-  messageDivEl.appendChild(messageSpanEl);
-  messageSpanEl.appendChild(messageText);
+  var messageDivBoxEl = document.createElement('div')
+  var messageDivEl = document.createElement('div');
+  var messageH2El = document.createElement('h2');
+
+  var att = document.createAttribute("class");
+  att.value = "row";
+  messageDivBoxEl.setAttributeNode(att);
+
+  messageDivEl.appendChild(messageH2El);
+  messageH2El.appendChild(messageText);
 
   messageDivEl.className = className;
 
   // Add to DOM
-  messagesContainerEl.appendChild(messageDivEl);
+  messageDivBoxEl.appendChild(messageDivEl)
+  messagesContainerEl.appendChild(messageDivBoxEl);
 
   // Reset messageInput
   messageInput.value = '';

@@ -3,33 +3,63 @@
   <head>
     <meta charset="utf-8">
     <title>Assignment 6</title>
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+    <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
+    <!--Navbar-->
+
+    <nav>
+      <ul>
+        <li><a href="../Assignment1\index.html">Assignment 1</a></li>
+        <li><a href="../Assignment2/simpleTable/index.html">Assignment 2</a></li>
+        <li><a href="../Assignment3/index.html">Assignment 3</a></li>
+        <li><a href="../Assignment4/index.html">Assignment 4</a></li>
+        <li><a href="../Assignment5/index.html">Assignment 5</a></li>
+        <li><a href="#" id="Assignment6">Assignment 6</a></li>
+      </ul>
+    </nav>
+
     <header>
-
-      <h1>Chat App</h1>
-
+      <div class="row">
+        <div class="col-">
+          <h1 id="top-heading">Chat App</h1>
+        </div>
+      </div>
     </header>
 
-    <main id="message-container">
+    <main>
 
-
+      <div class="row">
+          <div class="box" id="chat-box">
+            <div class="row">
+              <div class="col-">
+                <div id="message-container">
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
 
     </main>
 
     <footer>
-
-      <input type="text" id="message-input">
-
-      <button type="button" id="send-button">Send</button>
-
-      <button type="button" id="reply-button">Reply</button>
-
+      <div class="row">
+        <div class="col-">
+          <div id="input-box">
+            <input type="text" id="message-input">
+            <button type="button" id="send-button">Send</button>
+            <button type="button" id="reply-button">Reply</button>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="js/script.js" charset="utf-8"></script>
+
+    </script>
 
   </body>
 </html>

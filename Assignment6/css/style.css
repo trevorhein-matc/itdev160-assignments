@@ -1,8 +1,94 @@
+body {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+div {
+  width: 100%;
+}
 .out-message {
-  background-color: red;
+  background-color: rgb(223, 109, 37);
+  color: white;
+  float: left;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 .in-message {
-  background-color: blue;
-  text-align: right;
+  background-color: rgb(13, 83, 122);
+  color: white;
+  text-align: left;
+  float: right;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+h2 {
+  padding: .25em;
+}
+
+.sticky-top {
+  position: sticky
+  top: 0;
+  z-index: 1020;
+}
+
+nav {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  height: auto;
+  text-align: center;
+  line-height: 2.5em;
+  background-color: #03191E;
+}
+
+nav>ul {
+  padding-left: 0em;
+}
+
+nav>ul>li {
+  display: inline;
+  margin-right: 2em;
+  height: auto;
+  width: 100%;
+  font-size: 1.5em;
+}
+
+nav a:link, nav a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: rgb(18, 73, 117);
+  text-decoration: none;
+}
+
+#top-heading {
+  padding: .5em;
+}
+
+#chat-box {
+  width: 90%;
+  margin: auto;
+}
+
+#input-box {
+  width: 90%;
+  padding: 1em;
+  margin: auto;
+}
+
+button {
+  margin-left: 1em;
+  border-radius: 20px;
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+#send-button {
+  background-color: rgb(223, 109, 37);
+}
+
+#reply-button {
+  background-color: rgb(13, 83, 122);
 }
