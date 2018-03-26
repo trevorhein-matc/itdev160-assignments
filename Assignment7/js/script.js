@@ -86,9 +86,7 @@ function completeTask (event) {
       }
     }
     // Move task element from active list to completed listEl
-    var x = document.getElementById('active-list');
-    x.remove(listEl);
-
+    listEl.remove();
 
     //listEl.remove(listEl.);
     document.getElementById('completed-list').appendChild(listEl);
