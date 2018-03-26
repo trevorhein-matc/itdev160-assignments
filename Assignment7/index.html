@@ -3,22 +3,44 @@
   <head>
     <meta charset="utf-8">
     <title>Assignment 7</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header>
-      <h1>Todo List</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-">
+            <h1>Todo List</h1>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main>
       <div id="todo-list-container">
-        <ol id="active-list"></ol>
-        <ul id="completed-list"></ul>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <ol id="active-list"></ol>
+            </div>
+            <div class="col-6">
+              <ul id="completed-list"></ul>
+            </div>
+          </div>
+        </div>
       </div>
 
       <section>
-        <input type="text" id="input-task">
-        <button type="button" id="add-task">Add</button>
+        <div class="container">
+          <div class="row">
+            <div class="col-">
+              <input type="text" id="input-task">
+              <button type="button" id="add-task">Add</button>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 

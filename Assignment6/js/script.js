@@ -43,7 +43,7 @@ function addMessage(event) {
   // Create Element
   var messageText = document.createTextNode(message.text);
 
-  var messageDivBoxEl = document.createElement('div')
+  var messageDivBoxEl = document.createElement('div');
   var messageDivEl = document.createElement('div');
   var messageH2El = document.createElement('h2');
 
