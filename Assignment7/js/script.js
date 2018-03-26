@@ -75,7 +75,9 @@ function addTask (event) {
 // Click handler to complete a task
 function completeTask (event) {
   // Get the task element
-  var listEl = event.target;
+  var clickedEl = event.target;
+  // Grabs all of the nested elements
+  var listEl = clickedEl.parentElement.parentElement.parentElement;
   var id = listEl.id;
 
   // Find corresponding task in the tasks array and update taskStatus
