@@ -47,7 +47,7 @@ header h1 {
 }
 
 blockquote {
-  font-size: italic;
+  font-style: italic;
   margin: 1em 1em 1em 0;
 }
 
@@ -62,5 +62,5 @@ blockquote:before, blockquote:after {
 }
 
 .author:before {
-  content: '-';
+  content: '- ';
 }
