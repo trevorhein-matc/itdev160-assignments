@@ -40,104 +40,72 @@ var $body = $('#quoteBody');
 var $source = $('#quoteAuthor');
 var $submit = $('#quoteSubmit');
 
+function Quote (id, title, body, author) {
+  this.id = id;
+  this.title = title;
+  this.body = body;
+  this.author = author;
+}
+
+
+
+function addPost(i){
+  // Create Elements
+  var postId = 'post-' + data[i].id,
+    $post = $('<div class="post"></div>'),
+    $title = $('<h2 class="title"></h2>'),
+    $body = $('<blockquote></blockquote'),
+    $author = $('<span class="author"></span'),
+    $navItem = $('<li></li>');
+
+  // Add post data
+  $title.text(data[i].title);
+  $body.text(data[i].body);
+  $author.text(data[i].author);
+
+  // Add nav item data
+  $navItem.attr('id', data[i].id);
+  $navItem.text(data[i].title);
+
+  // Combine post Elements
+  $post.attr('id', postId);
+  $post.append($title);
+  $post.append($body);
+  $post.append($author);
+
+  // Add post and nave elements to page
+  $posts.append($post);
+  $nav.append($navItem);
+
+  // Wire up nav item click event
+  $navItem.on('click', function(){
+    var id = $(this).attr('id');
+    $posts.children().hide();
+    $posts.find('#post-' +id).fadeIn();
+  });
+
+  // hide all quotes and show the intro
+  $posts.children('.post').hide();
+  $intro.fadeIn(1000);
+
+}
+
 function initPosts() {
   for (var i = 0; i < data.length; i++) {
-    // Create Elements
-    var postId = 'post-' + data[i].id,
-      $post = $('<div class="post"></div>'),
-      $title = $('<h2 class="title"></h2>'),
-      $body = $('<blockquote></blockquote'),
-      $author = $('<span class="author"></span'),
-      $navItem = $('<li></li>');
-
-    // Add post data
-    $title.text(data[i].title);
-    $body.text(data[i].body);
-    $author.text(data[i].author);
-
-    // Add nav item data
-    $navItem.attr('id', data[i].id);
-    $navItem.text(data[i].title);
-
-    // Combine post Elements
-    $post.attr('id', postId);
-    $post.append($title);
-    $post.append($body);
-    $post.append($author);
-
-    // Add post and nave elements to page
-    $posts.append($post);
-    $nav.append($navItem);
-
-    // Wire up nav item click event
-    $navItem.on('click', function(){
-      var id = $(this).attr('id');
-      $posts.children().hide();
-      $posts.find('#post-' +id).fadeIn();
-    });
-
-    // hide all quotes and show the intro
-    $posts.children('.post').hide();
-    $intro.fadeIn(1000);
-
+    addPost(i);
   }
 }
 
 initPosts();
 
 $("#quoteSubmit").on('click', function(){
-  var $post = $('<div class="post"></div>'),
-    $title = $('<h2 class="title"></h2>'),
-    $body = $('<blockquote></blockquote'),
-    $author = $('<span class="author"></span'),
-    $navItem = $('<li></li>'),
     $inputTitle = $('#quoteTitle').val(),
     $inputBody = $('#quoteBody').val(),
     $inputAuthor = $('#quoteAuthor').val();
+    postId = data.length;
 
-    $title.text($inputTitle);
-    $body.text($inputBody);
-    $author.text($inputAuthor);
-    $navItem.text($inputTitle);
+    var quote = new Quote (postId, $inputTitle, $inputBody, $inputAuthor);
+    data.push(quote);
 
-    $post.append($title);
-    $post.append($body);
-    $post.append($author);
-    $posts.append($post);
-    $nav.append($navItem);
-
+    addPost(postId);
 });
-
-
-
-
-/*
-function addPost(event){
-  var postId = 'post-' + data[i].id
-}
-
-function addTask (event) {
-  // Get Input
-  var inputEl = document.getElementById('input-task')
-  if (inputEl.value != '') {
-    // Create a unique id
-    var id = data.length;
-
-    // Create a new quote
-    var data = new Quote(id, inputEl.value, taskStatus.active);
-    data.push(data);
-
-    // Add the task to the DOM
-    addTaskElement(task);
-
-    // Reset input
-    inputEl.value = '';
-  }
-}
-
-function init() {
-    document.getElementById('add-task').onclick = addTask;
-}
-
-init();
-*/
