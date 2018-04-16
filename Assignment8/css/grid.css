@@ -1,0 +1,94 @@
+/* Puts all elements in boxes */
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+/* Default everything becomes a col - Phones */
+[class*="col-"] {
+  width: 100%;
+}
+
+/* If screen > 600px use these col - Tablets */
+@media only screen and (min-width: 800px) {
+  .col-m-1 {width: 8.33%;}
+  .col-m-2 {width: 16.66%;}
+  .col-m-3 {width: 25%;}
+  .col-m-4 {width: 33.33%;}
+  .col-m-5 {width: 41.66%;}
+  .col-m-6 {width: 50%;}
+  .col-m-7 {width: 58.33%;}
+  .col-m-8 {width: 66.66%;}
+  .col-m-9 {width: 75%;}
+  .col-m-10 {width: 83.33%;}
+  .col-m-11 {width: 91.66%;}
+  .col-m-12 {width: 100%;}
+}
+
+/* If screen > 800px use these col sizes - Desktop*/
+@media only screen and (min-width: 800px) {
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+/*  Stops col from spilling over page when on small viewport*/
+[class*="col-"] {
+    float: left;
+    padding: 10px;
+}
+
+/* Stacks divs */
+div {
+  display: block;
+}
+
+/* Puts padding around the row box */
+.container {
+  padding: .25em;
+  width: 90%;
+  margin: auto;
+}
+
+/* full width of the windo container */
+.full-container {
+  padding: 0em;
+  width: 100%;
+  margin: 0px;
+}
+
+/* keeps the columns in a row and wraps them on smaller screens */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Scales image but never more than the original size*/
+.responsive {
+    max-width: 100%;
+    height: auto;
+}
+/* Or */
+.setResponsive {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.box {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: 'Poppins', sans-serif;
+  margin: .5em .5em .5em;
+}

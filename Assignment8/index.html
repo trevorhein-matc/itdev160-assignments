@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Assignment 8</title>
+    <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header>
-      <h1>Something that's Written Should be Taken as True</h1>
+      <h1>As if Something that's Written Should be Taken as True</h1>
     </header>
     <main>
       <section id="sidebar">
@@ -15,15 +16,35 @@
 
         </ul>
       </section>
-      <section id="post-container">
-        <section id="intro">
+      <div class="container" id="post-container">
+        <div class="row" id="intro">
           <h3>This is some test text for the Intro section.</h3>
           <blockquote>
             [A] quote is something that people will believe someone said even if they didn't
           </blockquote>
           <span class="author">T.T. Hein</span>
-        </section>
-      </section>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-">
+            <h3>Add your own Quote</h3>
+            <div class="row">
+              <label for="quoteTitle">Title *</label>
+              <input id="quoteTitle" type="text">
+            </div>
+            <div class="row">
+              <label for="quoteBody">The Quote *</label>
+              <input id="quoteBody" type="text">
+            </div>
+            <div class="row">
+              <label for="quoteAuthor">Author *</label>
+              <input id="quoteAuthor" type="text">
+            </div>
+            <button id="quoteSubmit" type="button" name="button">Submit</button>
+          </div>
+        </div>
+      </div>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

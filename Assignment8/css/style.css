@@ -49,6 +49,7 @@ header h1 {
 blockquote {
   font-style: italic;
   margin: 1em 1em 1em 0;
+  min-width: 200px;
 }
 
 blockquote:before, blockquote:after {

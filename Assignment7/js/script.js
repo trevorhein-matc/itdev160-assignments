@@ -38,7 +38,6 @@ function addTaskElement (task) {
   box.value = "box";
   taskDivBoxEl.setAttributeNode(box);
 
-
   // Set attributes in this case the element's id = task.id
   listEl.setAttribute('id', task.id);
 
