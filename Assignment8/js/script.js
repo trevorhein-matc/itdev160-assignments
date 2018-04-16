@@ -86,51 +86,29 @@ function initPosts() {
 initPosts();
 
 $("#quoteSubmit").on('click', function(){
-  var postId = 'post-' + data.length,
-    $post = $('<div class="post"></div>'),
+  var $post = $('<div class="post"></div>'),
     $title = $('<h2 class="title"></h2>'),
     $body = $('<blockquote></blockquote'),
     $author = $('<span class="author"></span'),
-    $navItem = $('<li></li>');
+    $navItem = $('<li></li>'),
+    $inputTitle = $('#quoteTitle').val(),
+    $inputBody = $('#quoteBody').val(),
+    $inputAuthor = $('#quoteAuthor').val();
 
-    $title.text($title.value);
-    $body.text($body.value);
-    $author.text($source.value);
+    $title.text($inputTitle);
+    $body.text($inputBody);
+    $author.text($inputAuthor);
+    $navItem.text($inputTitle);
 
-    $navItem.attr('id', postId);
-    $navItem.text($title.value);
-
-    $post.attr('id', postId);
     $post.append($title);
     $post.append($body);
     $post.append($author);
-
     $posts.append($post);
     $nav.append($navItem);
 
-    $title.value = '';
-    $body.value = '';
-    $author.value = '';
 });
 
-function addQuote() {
 
-  var titleEl = $title;
-  var bodyEl = $body;
-  var quoteEl = $source;
-
-  $submit.on('click', function(){
-    if (titleEl.value != '' && bodyEl.value != '' && quoteEl.value != ''){
-      var id = 'post-' + tasks.length;
-      var quote = new NewQuote(id, titleEl.value, bodyEl.value, quoteEl.value)
-      data.push(quote);
-
-      titleEl.value = '';
-      bodyEl.value = '';
-      quoteEl.value = '';
-    }
-  });
-}
 
 
 /*
