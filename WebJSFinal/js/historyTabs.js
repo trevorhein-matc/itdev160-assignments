@@ -4,11 +4,32 @@ var getEl = function (id) {
 
 function overviewDisplay() {
   var headerEl = getEl("main-nav-header");
-  var x = getEl("overview-div");
-  if (x.style.display === "block") {
-      x.style.display = "none";
+  var overview = getEl("overview-div");
+  var argentina = getEl("argentina-div");
+  if (overview.style.display === "block") {
+      overview.style.display = "none";
   } else {
-      x.style.display = "block";
+    if (argentina.style.display ==="block"){
+      argentina.style.display = "none";
+    }
+      overview.style.display = "block";
       headerEl.textContent = "Overview";
   }
+  closeNav();
+}
+
+function argentinaDisplay() {
+  var headerEl = getEl("main-nav-header");
+  var argentina = getEl("argentina-div");
+  var overview = getEl("overview-div");
+  if (argentina.style.display === "block") {
+      argentina.style.display = "none";
+  } else {
+    if (overview.style.display ==="block"){
+      overview.style.display = "none";
+    }
+      argentina.style.display = "block";
+      headerEl.textContent = "Argentina";
+  }
+  closeNav();
 }

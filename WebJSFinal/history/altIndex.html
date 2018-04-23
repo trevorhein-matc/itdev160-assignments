@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/slides.css">
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/sideNav.css">
+    <link rel="stylesheet" href="../css/timelineAccordion.css">
   </head>
   <body>
     <!-- Navbar -->
@@ -32,7 +33,7 @@
       <div id="sideNav" class="side-nav-style">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="material-icons">close</i></a>
         <a href="#" onclick="overviewDisplay()">Overview</a>
-        <a href="#">Argentina</a>
+        <a href="#" onclick="argentinaDisplay()">Argentina</a>
         <a href="#">Brazil</a>
         <a href="#">Cuba</a>
         <a href="#">Columbia</a>
@@ -56,7 +57,52 @@
           <div class="story-container">
             <h1>Overview</h1>
           </div>
-          <div class="container"></div>
+          <div class="container">
+            <button class="timelineAccordion">Encounter 1492 - 1600</button>
+            <div class="timelineSection">
+              <p>Section 1 place holder</p>
+            </div>
+            <button class="timelineAccordion">Cononialism 1600 - 1810</button>
+            <div class="timelineSection">
+              <p>Section 2 place holder</p>
+            </div>
+            <button class="timelineAccordion">Independence 1810 - 1825</button>
+            <div class="timelineSection">
+              <p>Section 3 place holder</p>
+            </div>
+            <button class="timelineAccordion">PostColonialism 1825 - 1850</button>
+            <div class="timelineSection">
+              <p>Section 4 place holder</p>
+            </div>
+            <button class="timelineAccordion">Progress 1850 - 1880</button>
+            <div class="timelineSection">
+              <p>Section 5 place holder</p>
+            </div>
+            <button class="timelineAccordion">Neocolonialism 1880 - 1930</button>
+            <div class="timelineSection">
+              <p>Section 6 place holder</p>
+            </div>
+            <button class="timelineAccordion">Nationalism 1910 - 1945</button>
+            <div class="timelineSection">
+              <p>Section 7 place holder</p>
+            </div>
+            <button class="timelineAccordion">Revolution 1945 - 1960</button>
+            <div class="timelineSection">
+              <p>Section 8 place holder</p>
+            </div>
+            <button class="timelineAccordion">Reaction 1960 - 1990</button>
+            <div class="timelineSection">
+              <p>Section 9 place holder</p>
+            </div>
+          </div>
+        </div>
+        <div id="argentina-div" style="display: none;">
+          <div class="story-container">
+            <h1>Argentina</h1>
+          </div>
+          <div class="container">
+
+          </div>
         </div>
       </div>
     </main>
@@ -64,5 +110,7 @@
     <script src="../js/nav.js" charset="utf-8"></script>
     <script src="../js/sideNav.js" charset="utf-8"></script>
     <script src="../js/historyTabs.js" charset="utf-8"></script>
+    <script src="../js/overviewInfo.js" charset="utf-8"></script>
+    <script src="../js/timelineAccordion.js" charset="utf-8"></script>
   </body>
 </html>
