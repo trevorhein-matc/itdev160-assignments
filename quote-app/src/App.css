@@ -26,3 +26,23 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+blockquote {
+  font-style: italic;
+  margin: 1em 1em 1em 0;
+  min-width: 200px;
+}
+
+blockquote:before, blockquote:after {
+  content: '"';
+}
+
+.author {
+  width: 100%;
+  display: inline-block;
+  text-indent: 5%;
+}
+
+.author:before {
+  content: '- ';
+}
