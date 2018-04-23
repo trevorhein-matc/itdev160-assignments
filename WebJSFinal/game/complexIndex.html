@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Latin American Farm Game</title>
+    <meta name="description" content="Farm Simulator">
+    <meta name="keywords" content="Farm, Simulator, Education">
+    <meta name="author" content="Trevor Hein">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/gameBoard.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="nav" id="Topnav">
+      <a href="../index.html">Home</a>
+      <a href="#" class="active">Game</a>
+      <a href="../glossary/index.html">Glossary</a>
+      <a href="../history/index.html">History</a>
+      <a href="../examples/index.html">Examples</a>
+      <a href="../education/index.html">Education</a>
+      <a href="javascrip:void(0);" style="font-size:1.25em;" class="icon" onclick="navMenu()">&#9776;</a>
+    </div>
+
+    <main class="margin-buffer" id="Topmain">
+      <div class="container">
+
+        <div class="full-container">
+          <div class="row">
+            <div class="year-container">
+              <table>
+                <tr id="year-list">
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-">
+            <h2>Socio-Economic Conditions</h2>
+          </div>
+        </div>
+
+        <!-- Conditions -->
+
+        <div class="row">
+          <div class="col-6 col-">
+            <div class="full-container">
+              <div class="row">
+                <h3>Condition 1</h3>
+              </div>
+              <div class="row">
+                <p>This is where the definition of the term will go</p>
+              </div>
+              <div class="row">
+                <div class="col-">
+                  <ul>
+                    <li>Domestic Crop Demand Effect: </li>
+                    <li>Cash Crop Demand Effect: </li>
+                    <li>Illegal Crop Demand Effect: </li>
+                    <li>Political Spectrum Effect: </li>
+                    <li>Foreign Relations Effect: </li>
+                    <li>Labor Effect: </li>
+                    <li>Infrastructure Effect: </li>
+                    <li>Tax Effect: </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-">
+            <div class="full-container">
+              <div class="row">
+                <h3>Condition 2</h3>
+              </div>
+              <div class="row">
+                <p>This is where the definition of the term will go</p>
+              </div>
+              <div class="row">
+                <div class="col-">
+                  <ul>
+                    <li>Domestic Crop Demand Effect: </li>
+                    <li>Cash Crop Demand Effect: </li>
+                    <li>Illegal Crop Demand Effect: </li>
+                    <li>Political Spectrum Effect: </li>
+                    <li>Foreign Relations Effect: </li>
+                    <li>Labor Effect: </li>
+                    <li>Infrastructure Effect: </li>
+                    <li>Tax Effect: </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game Table -->
+
+        <div class="row">
+
+          <!-- Overhead Div -->
+
+          <div class="col-4 col-">
+
+            <div class="row">
+              <h2>Political Climate</h2>
+            </div>
+
+            <!-- Ideology -->
+
+            <div class="row">
+              <h3>Ideology</h3>
+            </div>
+            <div class="row">
+              <tbody>
+                <td>level 1</td>
+                <td>level 2</td>
+                <td>level 3</td>
+                <td>level 4</td>
+                <td>level 5</td>
+              </tbody>
+            </div>
+            <div class="row">
+              <h4>Effect: </h4>
+            </div>
+
+            <!-- Stability -->
+
+            <div class="row">
+              <h3>Stability</h3>
+            </div>
+            <div class="row">
+              <tbody>
+                <td>level 1</td>
+                <td>level 2</td>
+                <td>level 3</td>
+                <td>level 4</td>
+                <td>level 5</td>
+              </tbody>
+            </div>
+            <div class="row">
+              <h4>Effect: </h4>
+            </div>
+
+            <!-- Foreign Policy -->
+
+            <div class="row">
+              <h3>Foreign Policy</h3>
+            </div>
+            <div class="row">
+              <tbody>
+                <td>Isolationist</td>
+                <td>level 2</td>
+                <td>level 3</td>
+                <td>level 4</td>
+                <td>Globalist</td>
+              </tbody>
+            </div>
+            <div class="row">
+              <h4>Effect: </h4>
+            </div>
+
+            <!-- Taxes -->
+
+            <div class="row">
+              <h3>Taxes</h3>
+            </div>
+            <div class="row">
+              <tbody>
+                <td>level 1</td>
+                <td>level 2</td>
+                <td>level 3</td>
+                <td>level 4</td>
+                <td>level 5</td>
+              </tbody>
+            </div>
+            <div class="row">
+              <h4>Effect: </h4>
+            </div>
+          </div>
+
+          <!-- Logistics -->
+
+          <div class="col-4 col-">
+            <div class="row">
+              <h2>Logistics</h2>
+            </div>
+
+            <!-- Regulation -->
+
+            <div class="row">
+              <h3>Regulation</h3>
+            </div>
+            <div class="row">
+              <tbody>
+                <td>Command Economy</td>
+                <td>level 2</td>
+                <td>level 3</td>
+                <td>level 4</td>
+                <td>laissez faire</td>
+              </tbody>
+            </div>
+            <div class="row">
+              <h4>Effect: </h4>
+            </div>
+
+            <!-- Labor Cost -->
+
+            <div class="row">
+              <h3>Labor Cost</h3>
+            </div>
+            <div class="row">
+              <tbody>
+                <td>level 1</td>
+                <td>level 2</td>
+                <td>level 3</td>
+                <td>level 4</td>
+                <td>level 5</td>
+              </tbody>
+            </div>
+            <div class="row">
+              <h4>Effect: </h4>
+            </div>
+
+            <!-- Infrastructure -->
+
+            <div class="row">
+              <h3>Infrastructure</h3>
+            </div>
+            <div class="row">
+              <tbody>
+                <td>level 1</td>
+                <td>level 2</td>
+                <td>level 3</td>
+                <td>level 4</td>
+                <td>level 5</td>
+              </tbody>
+            </div>
+            <div class="row">
+              <h4>Effect: </h4>
+            </div>
+
+            <!-- Seed Prices -->
+
+            <div class="row">
+              <h3>Seed Prices</h3>
+            </div>
+            <div class="row">
+              <tbody>
+                <td>Domestic</td>
+                <td>Cash</td>
+                <td>Illegal</td>
+              </tbody>
+            </div>
+
+            <!-- Base Market Sale Price -->
+
+            <div class="row">
+              <h3>Base Market Value</h3>
+            </div>
+            <div class="row">
+              <tbody>
+                <td>Domestic</td>
+                <td>Cash</td>
+                <td>Illegal</td>
+              </tbody>
+            </div>
+
+          </div>
+
+          <!-- Markets -->
+
+          <div class="col-4 col-">
+
+            <div class="row">
+              <h2>The Markets</h2>
+            </div>
+
+            <div class="row">
+              <h3>Market Availability</h3>
+            </div>
+            <div class="row">
+              <thead>
+                <th>Local</th>
+                <th>Domestic</th>
+                <th>Neighbors</th>
+                <th>Non-Aligned</th>
+                <th>US</th>
+                <th>USSR</th>
+              </thead>
+            </div>
+
+            <!-- Local Market -->
+
+            <div class="row">
+              <h3>Local</h3>
+            </div>
+            <div class="row">
+              <thead>
+                <th>Crop</th>
+                <th>Demand</th>
+                <th>Market Strength</th>
+                <th>Distribution Cost</th>
+              </thead>
+            </div>
+
+            <!-- National Market -->
+
+            <div class="row">
+              <h3>National</h3>
+            </div>
+            <div class="row">
+              <thead>
+                <th>Crop</th>
+                <th>Demand</th>
+                <th>Market Strength</th>
+                <th>Distribution Cost</th>
+              </thead>
+            </div>
+
+            <!-- Neighbors Market -->
+
+            <div class="row">
+              <h3>Neighbors</h3>
+            </div>
+            <div class="row">
+              <thead>
+                <th>Crop</th>
+                <th>Demand</th>
+                <th>Market Strength</th>
+                <th>Distribution Cost</th>
+              </thead>
+            </div>
+
+            <!-- US Market -->
+
+            <div class="row">
+              <h3>US Market</h3>
+            </div>
+            <div class="row">
+              <thead>
+                <th>Crop</th>
+                <th>Demand</th>
+                <th>Market Strength</th>
+                <th>Distribution Cost</th>
+              </thead>
+            </div>
+
+            <!-- USSR Market -->
+
+            <div class="row">
+              <h3>USSR Market</h3>
+            </div>
+            <div class="row">
+              <thead>
+                <th>Crop</th>
+                <th>Demand</th>
+                <th>Market Strength</th>
+                <th>Distribution Cost</th>
+              </thead>
+            </div>
+
+            <!-- Non-Aligned Market -->
+
+            <div class="row">
+              <h3>Non-Aligned Market</h3>
+            </div>
+            <div class="row">
+              <thead>
+                <th>Crop</th>
+                <th>Demand</th>
+                <th>Market Strength</th>
+                <th>Distribution Cost</th>
+              </thead>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="row">
+              <h2>Up Front Costs</h2>
+            </div>
+            <div class="row">
+              <tr>
+                <th>Crop Type</th>
+                <th>Labor Effect</th>
+                <th>Tax Effect</th>
+              </tr>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <h2>Distribution</h2>
+            </div>
+            <div class="row">
+              <tr>
+                <th>Dom Crop Intended Market</th>
+                <th>Cash Crop Intended Market</th>
+                <th>Illegal Crop Intended Market</th>
+              </tr>
+            </div>
+            <div class="row">
+              <tr>
+                <th>Shipping Costs</th>
+                <th>Tarriffs</th>
+              </tr>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-">
+          <div class="row">
+            <h1>Purchasing</h1>
+          </div>
+          <div class="row">
+            <h2>Expenses</h2>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <section>
+      <button type="button" id="add-year">Add Year</button>
+    </section>
+
+    <script src="../js/nav.js" charset="utf-8"></script>
+    <script src="../js/gameBoard.js" charset="utf-8"></script>
+  </body>
+</html>

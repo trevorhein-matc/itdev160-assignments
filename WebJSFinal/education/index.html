@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Latin American Farm Game</title>
+    <meta name="description" content="Farm Simulator">
+    <meta name="keywords" content="Farm, Simulator, Education">
+    <meta name="author" content="Trevor Hein">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/tabs.css">
+    <link rel="stylesheet" href="../css/master.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="nav" id="Topnav">
+      <a href="../index.html">Home</a>
+      <a href="../game/index.html">Game</a>
+      <a href="../glossary/index.html">Glossary</a>
+      <a href="../history/index.html">History</a>
+      <a href="../examples/index.html">Examples</a>
+      <a href="#" class="active">Education</a>
+      <a href="javascrip:void(0);" style="font-size:1.25em;" class="icon" onclick="navMenu()">&#9776;</a>
+    </div>
+
+    <main class="margin-buffer" id="Topmain">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <div class="box">
+              <div class="container">
+                <div class="row">
+                  <h1>Learning Intentions</h1>
+                </div>
+                <div class="row">
+                  <ul>
+                    <li>Li 1</li>
+                    <li>Li 2</li>
+                    <li>Li 3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="box">
+              <div class="container">
+                <div class="row">
+                  <h1>Student Outcomes</h1>
+                </div>
+                <div class="row">
+                  <ul>
+                    <li>So 1</li>
+                    <li>So 2</li>
+                    <li>So 3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab">
+        <button type="button" class="tablinks politics-tab" onclick="openStats(event, 'politics')" id="defaultOpen"><h2>Politics</h2></button>
+        <button type="button" class="tablinks economicss-tab" onclick="openStats(event, 'economics')"><h2>Economics</h2></button>
+        <button type="button" class="tablinks history-tab" onclick="openStats(event, 'history')"><h2>History</h2></button>
+      </div>
+
+      <div id="politics" class="tabcontent">
+
+      </div>
+
+      <div id="economics" class="tabcontent">
+
+      </div>
+
+      <div id="history" class="tabcontent">
+
+      </div>
+
+    </main>
+
+    <script src="../js/nav.js" charset="utf-8"></script>
+    <script src="../js/tabs.js" charset="utf-8"></script>
+    <script src="../js/standards.js" charset="utf-8"></script>
+  </body>
+</html>

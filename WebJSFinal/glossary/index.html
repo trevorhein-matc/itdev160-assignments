@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Latin American Farm Game</title>
+    <meta name="description" content="Farm Simulator">
+    <meta name="keywords" content="Farm, Simulator, Education">
+    <meta name="author" content="Trevor Hein">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/tabs.css">
+    <link rel="stylesheet" href="../css/master.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="nav" id="Topnav">
+      <a href="../index.html">Home</a>
+      <a href="../game/index.html">Game</a>
+      <a href="#" class="active">Glossary</a>
+      <a href="../history/index.html">History</a>
+      <a href="../examples/index.html">Examples</a>
+      <a href="../education/index.html">Education</a>
+      <a href="javascrip:void(0);" style="font-size:1.25em;" class="icon" onclick="navMenu()">&#9776;</a>
+    </div>
+
+    <main class="margin-buffer" id="Topmain">
+
+      <div class="tab">
+        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'general')" id="defaultOpen"><h2>General</h2></button>
+        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'products')"><h2>Products</h2></button>
+        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'taxes')"><h2>Taxes</h2></button>
+        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'regulation')"><h2>Regulation</h2></button>
+        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'stability')"><h2>Stability</h2></button>
+        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'foreign')"><h2>Foreign</h2></button>
+        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'labor')"><h2>Labor</h2></button>
+        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'infrastructure')"><h2>Infrastructure</h2></button>
+      </div>
+
+      <div id="general" class="tabcontent">
+
+      </div>
+
+      <div id="products" class="tabcontent">
+
+      </div>
+
+      <div id="taxes" class="tabcontent">
+
+      </div>
+
+      <div id="regulation" class="tabcontent">
+
+      </div>
+
+      <div id="stability" class="tabcontent">
+
+      </div>
+
+      <div id="foreign" class="tabcontent">
+
+      </div>
+
+      <div id="labor" class="tabcontent">
+
+      </div>
+
+      <div id="infrastructure" class="tabcontent">
+
+      </div>
+
+    </main>
+
+    <script src="../js/nav.js" charset="utf-8"></script>
+    <script src="../js/tabs.js" charset="utf-8"></script>
+    <script src="../js/glossary.js" charset="utf-8"></script>
+  </body>
+</html>

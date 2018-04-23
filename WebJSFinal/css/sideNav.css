@@ -1,0 +1,86 @@
+/* The side navigation menu */
+.side-nav-style {
+    height: 100%;
+    width: 0; /* Default so that it doesn't show. Set by onClick */
+    position: fixed;
+    z-index: 1; /* Under the Top nav but over main content */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.side-nav-style a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 2em;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.side-nav-style a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.side-nav-style .closebtn {
+    position: absolute;
+    margin-top: 50px;
+    top: 0;
+    right: 25px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 2em;}
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.main-section-span {
+    font-size:2em;
+    cursor:pointer;
+    vertical-align: middle;
+}
+
+.main-section-nav {
+    min-width: 50px;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+span .material-icons {
+    padding-bottom: 5px;
+}
+
+#side-nav-buffer {
+    padding-left: 15px;
+    padding-top: 10px;
+}

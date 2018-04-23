@@ -1,0 +1,517 @@
+td<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Latin American Farm Game</title>
+    <meta name="description" content="Farm Simulator">
+    <meta name="keywords" content="Farm, Simulator, Education">
+    <meta name="author" content="Trevor Hein">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/gameBoard.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="nav" id="Topnav">
+      <a href="../index.html">Home</a>
+      <a href="#" class="active">Game</a>
+      <a href="../glossary/index.html">Glossary</a>
+      <a href="../history/index.html">History</a>
+      <a href="../examples/index.html">Examples</a>
+      <a href="../education/index.html">Education</a>
+      <a href="javascrip:void(0);" style="font-size:1.25em;" class="icon" onclick="navMenu()">&#9776;</a>
+    </div>
+
+    <main class="margin-buffer" id="Topmain">
+
+      <div class="container">
+        <div class="row">
+          <div class="year-container">
+            <table>
+              <tr id="year-list">
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="full-container">
+        <div class="container">
+          <div class="row">
+            <h2>Domestic Effects</h2>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <h2>Your Crops</h2>
+          </div>
+          <div class="row">
+            <table>
+              <thead>
+                <th>Crop</th>
+                <th>Type</th>
+                <th>Value</th>
+                <th>Cost</th>
+                <th>Amount</th>
+                <th>Total Cost</th>
+              </thead>
+              <tr>
+                <td id="c1-name"></td>
+                <td id="c1-type"></td>
+                <td id="c1-value"></td>
+                <td id="c1-cost"></td>
+                <td id="c1-amount"></td>
+                <td id="c1-total"></td>
+                <td><button type="button" class="btn btn-default" onclick="plantainPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="plantainSellBtn()">Less</button></td>
+              </tr>
+              <tr>
+                <td id="c2-name"></td>
+                <td id="c2-type"></td>
+                <td id="c2-value"></td>
+                <td id="c2-cost"></td>
+                <td id="c2-amount"></td>
+                <td id="c2-total"></td>
+                <td><button type="button" class="btn btn-default" onclick="bananasPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="bananasSellBtn()">Less</button></td>
+              </tr>
+              <tr>
+                <td id="c3-name"></td>
+                <td id="c3-type"></td>
+                <td id="c3-value"></td>
+                <td id="c3-cost"></td>
+                <td id="c3-amount"></td>
+                <td id="c3-total"></td>
+                <td><button type="button" class="btn btn-default" onclick="pineapplesPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="pineapplesSellBtn()">Less</button></td>
+              </tr>
+              <tr>
+                <td id="c4-name"></td>
+                <td id="c4-type"></td>
+                <td id="c4-value"></td>
+                <td id="c4-cost"></td>
+                <td id="c4-amount"></td>
+                <td id="c4-total"></td>
+                <td><button type="button" class="btn btn-default" onclick="sugarPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="sugarSellBtn()">Less</button></td>
+              </tr>
+              <tr>
+                <td id="c5-name"></td>
+                <td id="c5-type"></td>
+                <td id="c5-value"></td>
+                <td id="c5-cost"></td>
+                <td id="c5-amount"></td>
+                <td id="c5-total"></td>
+                <td><button type="button" class="btn btn-default" onclick="coffeePurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="coffeeSellBtn()">Less</button></td>
+              </tr>
+              <tr>
+                <td id="c6-name"></td>
+                <td id="c6-type"></td>
+                <td id="c6-value"></td>
+                <td id="c6-cost"></td>
+                <td id="c6-amount"></td>
+                <td id="c6-total"></td>
+                <td><button type="button" class="btn btn-default" onclick="cottonPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="cottonSellBtn()">Less</button></td>
+              </tr>
+              <tr>
+                <td id="c7-name"></td>
+                <td id="c7-type"></td>
+                <td id="c7-value"></td>
+                <td id="c7-cost"></td>
+                <td id="c7-amount"></td>
+                <td id="c7-total"></td>
+                <td><button type="button" class="btn btn-default" onclick="tobaccoPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="tobaccoSellBtn()">Less</button></td>
+              </tr>
+              <tr>
+                <td id="c8-name"></td>
+                <td id="c8-type"></td>
+                <td id="c8-value"></td>
+                <td id="c8-cost"></td>
+                <td id="c8-amount"></td>
+                <td id="c8-total"></td>
+                <td><button type="button" class="btn btn-default" onclick="goatsPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="goatsSellBtn()">Less</button></td>
+              </tr>
+              <tr>
+                <td id="c9-name"></td>
+                <td id="c9-type"></td>
+                <td id="c9-value"></td>
+                <td id="c9-cost"></td>
+                <td id="c9-amount"></td>
+                <td id="c9-total"></td>
+                <td><button type="button" class="btn btn-default" onclick="cattlePurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="cattleSellBtn()">Less</button></td>
+              </tr>
+              <tr>
+                <td id="c10-name"></td>
+                <td id="c10-type"></td>
+                <td id="c10-value"></td>
+                <td id="c10-cost"></td>
+                <td id="c10-amount"></td>
+                <td id="c10-total"></td>
+                <td><button type="button" class="btn btn-default" onclick="marijuanaPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="marijuanaSellBtn()">Less</button></td>
+              </tr>
+              <tr>
+                <td id="c11-name"></td>
+                <td id="c11-type"></td>
+                <td id="c11-value"></td>
+                <td id="c11-cost"></td>
+                <td id="c11-amount"></td>
+                <td id="c11-total"></td>
+                <td><button type="button" class="btn btn-default" onclick="cocaPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="cocaSellBtn()">Less</button></td>
+              </tr>
+              <tr>
+                <td id="c12-name"></td>
+                <td id="c12-type"></td>
+                <td id="c12-value"></td>
+                <td id="c12-cost"></td>
+                <td id="c12-amount"></td>
+                <td id="c12-total"></td>
+                <td><button type="button" class="btn btn-default" onclick="opiumPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="opiumSellBtn()">Less</button></td>
+              </tr>
+            </table>
+          </div>
+          <div class="row">
+            <h2>Up-Front Costs</h2>
+          </div>
+          <div class="row">
+            <table>
+              <thead>
+                <th>Crop Cost</th>
+                <th>Land Use</th>
+                <th>Labor Cost</th>
+              </thead>
+              <tr>
+                <td id="cropTotalCost"></td>
+                <td id="landUse"></td>
+                <td id="laborCost"></td>
+              </tr>
+            </table>
+          </div>
+          <div class="row">
+            <h2>Total Up Front Costs</h2>
+          </div>
+          <div class="row">
+            <table>
+              <thead>
+                <th>Bank</th>
+                <th>Invested</th>
+              </thead>
+              <tr>
+                <td id="bank"></td>
+                <td id="invested"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <h2>Weather and Random Event Effects</h2>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <h2>Crop Yields</h2>
+          </div>
+          <div class="row">
+            <table>
+              <thead>
+                <th>Crop</th>
+                <th>Weather Effect</th>
+                <th>Random Effect</th>
+                <th>Total Yield Amount</th>
+              </thead>
+              <tr>
+                <td>Plantains</td>
+                <td>Weather Calc</td>
+                <td>Random Calc</td>
+                <td>Total Calc</td>
+              </tr>
+              <tr>
+                <td>Bananas</td>
+                <td>Weather Calc</td>
+                <td>Random Calc</td>
+                <td>Total Calc</td>
+              </tr>
+              <tr>
+                <td>Pineapples</td>
+                <td>Weather Calc</td>
+                <td>Random Calc</td>
+                <td>Total Calc</td>
+              </tr>
+              <tr>
+                <td>Sugar</td>
+                <td>Weather Calc</td>
+                <td>Random Calc</td>
+                <td>Total Calc</td>
+              </tr>
+              <tr>
+                <td>Cotton</td>
+                <td>Weather Calc</td>
+                <td>Random Calc</td>
+                <td>Total Calc</td>
+              </tr>
+              <tr>
+                <td>Coffee</td>
+                <td>Weather Calc</td>
+                <td>Random Calc</td>
+                <td>Total Calc</td>
+              </tr>
+              <tr>
+                <td>Tobacco</td>
+                <td>Weather Calc</td>
+                <td>Random Calc</td>
+                <td>Total Calc</td>
+              </tr>
+              <tr>
+                <td>Goats</td>
+                <td>Weather Calc</td>
+                <td>Random Calc</td>
+                <td>Total Calc</td>
+              </tr>
+              <tr>
+                <td>Cattle</td>
+                <td>Weather Calc</td>
+                <td>Random Calc</td>
+                <td>Total Calc</td>
+              </tr>
+              <tr>
+                <td>Marijuana</td>
+                <td>Weather Calc</td>
+                <td>Random Calc</td>
+                <td>Total Calc</td>
+              </tr>
+              <tr>
+                <td>Coca</td>
+                <td>Weather Calc</td>
+                <td>Random Calc</td>
+                <td>Total Calc</td>
+              </tr>
+              <tr>
+                <td>Opium</td>
+                <td>Weather Calc</td>
+                <td>Random Calc</td>
+                <td>Total Calc</td>
+              </tr>
+            </table>
+          </div>
+          <div class="row">
+            <h2>The Markets</h2>
+          </div>
+          <div class="row">
+            <table>
+              <thead>
+                <th>Market</th>
+                <th>Access</th>
+                <th>Demand</th>
+                <th>Tarriff Rate</th>
+                <th>Transport</th>
+              </thead>
+              <tr>
+                <td>Local</td>
+                <td>Market Decision</td>
+                <td>Demand Calc</td>
+                <td>Tarriff Calc</td>
+                <td>Transport Calc</td>
+              </tr>
+              <tr>
+                <td>Domestic</td>
+                <td>Market Decision</td>
+                <td>Demand Calc</td>
+                <td>Tarriff Calc</td>
+                <td>Transport Calc</td>
+              </tr>
+              <tr>
+                <td>Neighbors</td>
+                <td>Market Decision</td>
+                <td>Demand Calc</td>
+                <td>Tarriff Calc</td>
+                <td>Transport Calc</td>
+              </tr>
+              <tr>
+                <td>Non-Aligned</td>
+                <td>Market Decision</td>
+                <td>Demand Calc</td>
+                <td>Tarriff Calc</td>
+                <td>Transport Calc</td>
+              </tr>
+              <tr>
+                <td>US Market</td>
+                <td>Market Decision</td>
+                <td>Demand Calc</td>
+                <td>Tarriff Calc</td>
+                <td>Transport Calc</td>
+              </tr>
+              <tr>
+                <td>USSR Market</td>
+                <td>Market Decision</td>
+                <td>Demand Calc</td>
+                <td>Tarriff Calc</td>
+                <td>Transport Calc</td>
+              </tr>
+            </table>
+          </div>
+          <div class="row">
+            <h2>Sales Contracts</h2>
+          </div>
+          <div class="row">
+            <table>
+              <thead>
+                <th>Crop</th>
+                <th>Amount</th>
+                <th>Market</th>
+                <th>Distribution Cost</th>
+                <th>Expected Returns</th>
+              </thead>
+              <tr>
+                <td>Plantains</td>
+                <td>Amount Calc</td>
+                <td>Market Decision</td>
+                <td>Distribution Cost</td>
+                <td>Return Calc</td>
+              </tr>
+              <tr>
+                <td>Bananas</td>
+                <td>Amount Calc</td>
+                <td>Market Decision</td>
+                <td>Distribution Cost</td>
+                <td>Return Calc</td>
+              </tr>
+              <tr>
+                <td>Pineapples</td>
+                <td>Amount Calc</td>
+                <td>Market Decision</td>
+                <td>Distribution Cost</td>
+                <td>Return Calc</td>
+              </tr>
+              <tr>
+                <td>Sugar</td>
+                <td>Amount Calc</td>
+                <td>Market Decision</td>
+                <td>Distribution Cost</td>
+                <td>Return Calc</td>
+              </tr>
+              <tr>
+                <td>Coffee</td>
+                <td>Amount Calc</td>
+                <td>Market Decision</td>
+                <td>Distribution Cost</td>
+                <td>Return Calc</td>
+              </tr>
+              <tr>
+                <td>Tobacco</td>
+                <td>Amount Calc</td>
+                <td>Market Decision</td>
+                <td>Distribution Cost</td>
+                <td>Return Calc</td>
+              </tr>
+              <tr>
+                <td>Goats</td>
+                <td>Amount Calc</td>
+                <td>Market Decision</td>
+                <td>Distribution Cost</td>
+                <td>Return Calc</td>
+              </tr>
+              <tr>
+                <td>Cattle</td>
+                <td>Amount Calc</td>
+                <td>Market Decision</td>
+                <td>Distribution Cost</td>
+                <td>Return Calc</td>
+              </tr>
+              <tr>
+                <td>Marijuana</td>
+                <td>Amount Calc</td>
+                <td>Market Decision</td>
+                <td>Distribution Cost</td>
+                <td>Return Calc</td>
+              </tr>
+              <tr>
+                <td>Coca</td>
+                <td>Amount Calc</td>
+                <td>Market Decision</td>
+                <td>Distribution Cost</td>
+                <td>Return Calc</td>
+              </tr>
+              <tr>
+                <td>Opium</td>
+                <td>Amount Calc</td>
+                <td>Market Decision</td>
+                <td>Distribution Cost</td>
+                <td>Return Calc</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <h2>Foreign Econ Condition Effects</h2>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <h2>Bottom Line</h2>
+          </div>
+          <div class="row">
+            <table>
+              <thead>
+                <th>Crop</th>
+                <th>Net</th>
+              </thead>
+              <tr>
+                <td>Bananas</td>
+                <td>Net Calc</td>
+              </tr>
+              <tr>
+                <td>Pineapples</td>
+                <td>Net Calc</td>
+              </tr>
+              <tr>
+                <td>Sugar</td>
+                <td>Net Calc</td>
+              </tr>
+              <tr>
+                <td>Coffee</td>
+                <td>Net Calc</td>
+              </tr>
+              <tr>
+                <td>Tobacco</td>
+                <td>Net Calc</td>
+              </tr>
+              <tr>
+                <td>Goats</td>
+                <td>Net Calc</td>
+              </tr>
+              <tr>
+                <td>Cattle</td>
+                <td>Net Calc</td>
+              </tr>
+              <tr>
+                <td>Marijuana</td>
+                <td>Net Calc</td>
+              </tr>
+              <tr>
+                <td>Coca</td>
+                <td>Net Calc</td>
+              </tr>
+              <tr>
+                <td>Opium</td>
+                <td>Net Calc</td>
+              </tr>
+            </table>
+          </div>
+          <div class="row">
+            <h2>Cash in Bank</h2>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--
+
+    <section>
+      <button type="button" id="add-year">Add Year</button>
+    </section>
+
+  -->
+
+    <script src="../js/nav.js" charset="utf-8"></script>
+    <script src="../js/gameBoard.js" charset="utf-8"></script>
+  </body>
+</html>

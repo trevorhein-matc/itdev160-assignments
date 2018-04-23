@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Latin American Farm Game</title>
+    <meta name="description" content="Farm Simulator">
+    <meta name="keywords" content="Farm, Simulator, Education">
+    <meta name="author" content="Trevor Hein">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/slides.css">
+    <link rel="stylesheet" href="../css/master.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="nav" id="Topnav">
+      <a href="../index.html">Home</a>
+      <a href="../game/index.html">Game</a>
+      <a href="../glossary/index.html">Glossary</a>
+      <a href="#" class="active">History</a>
+      <a href="../examples/index.html">Examples</a>
+      <a href="../education/index.html">Education</a>
+      <a href="javascrip:void(0);" style="font-size:1.25em;" class="icon" onclick="navMenu()">&#9776;</a>
+    </div>
+
+    <main class="margin-buffer" id="Topmain">
+
+    <div class="full-container">
+      <div id="liberiaTime" class="slideshow-container">
+        <div class="slide fade">
+          <div class="dateText">1950</div>
+          <h1>Test1</h1>
+          <div class="caption">Caption One</div>
+        </div>
+        <div class="slide fade">
+          <div class="dateText">1951</div>
+          <h2>Test2</h2>
+          <div class="caption">Caption Two</div>
+        </div>
+        <div class="slide fade">
+          <div class="dateText">1952</div>
+          <h3>Test3</h3>
+          <div class="caption">Caption Three</div>
+        </div>
+        <div class="slide fade">
+          <div class="dateText">1953</div>
+          <h4>Test4</h4>
+          <div class="caption">Caption Four</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <!-- The dots/circles -->
+        <br>
+        <div style="text-align:center">
+          <span><button onclick="currentSlide(1)" class="dot">1</button></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-">
+        <div class="complex">
+          <table id="complex-table">
+            <thead>
+              <tr>
+                <th scope="col">Region</th>
+                <th scope="col">Territory</th>
+                <th scope="col">1820's</th>
+                <th scope="col">30's</th>
+                <th scope="col">40's</th>
+                <th scope="col">50's</th>
+                <th scope="col">60's</th>
+                <th scope="col">70's</th>
+                <th scope="col">80's</th>
+                <th scope="col">90's</th>
+                <th scope="col">1900's</th>
+                <th scope="col">10's</th>
+                <th scope="col">20's</th>
+                <th scope="col">30's</th>
+                <th scope="col">40's</th>
+                <th scope="col">50's</th>
+                <th scope="col">60's</th>
+                <th scope="col">70's</th>
+                <th scope="col">80's</th>
+                <th scope="col">90's</th>
+                <th scope="col">2000's</th>
+                <th scope="col">Present</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rotate africa" rowspan="1"><div>Afr.</div></td>
+                <td><button onclick="liberiaDisplay()">Liberia</button></td>
+                <td colspan="3" class="involved"></td>
+                <td colspan="17" class="africa"></td>
+              </tr>
+              <tr>
+                <td class="rotate asia" rowspan="3"><div>Asia</div></td>
+                <td>Nanpo Islands (Japan)</td>
+                <td colspan="12" class="asia"></td>
+                <td colspan="2" class="involved"></td>
+                <td colspan="6" class="asia"></td>
+              </tr>
+              <tr>
+                <td>Marcus Island (Japan)</td>
+                <td colspan="12" class="asia"></td>
+                <td colspan="2" class="involved"></td>
+                <td colspan="6" class="asia"></td>
+              </tr>
+              <tr>
+                <td>Okinawa (Japan)</td>
+                <td colspan="13" class="asia"></td>
+                <td colspan="3" class="involved"></td>
+                <td colspan="4" class="asia"></td>
+              </tr>
+              <tr>
+                <td class="rotate centralAm" rowspan="10"><div>Latin America</div></td>
+                <td>Puerto Rico</td>
+                <td colspan="7" class="centralAm"></td>
+                <td colspan="13" class="involved"></td>
+              </tr>
+              <tr>
+                <td>Cuba</td>
+                <td colspan="7" class="centralAm"></td>
+                <td colspan="2" class="involved"></td>
+                <td colspan="11" class="centralAm"></td>
+              </tr>
+              <tr>
+                <td>Swan Islands (Honduras)</td>
+                <td colspan="4" class="centralAm"></td>
+                <td colspan="2" class="involved"></td>
+                <td colspan="14" class="centralAm"></td>
+              </tr>
+              <tr>
+                <td>Panama Canal Zone (Panama)</td>
+                <td colspan="8" class="centralAm"></td>
+                <td colspan="6" class="involved"></td>
+                <td colspan="6" class="centralAm"></td>
+              </tr>
+              <tr>
+                <td>Rio Rico, Tamaulipas (Mexico)</td>
+                <td colspan="8" class="centralAm"></td>
+                <td colspan="7" class="involved"></td>
+                <td colspan="5" class="centralAm"></td>
+              </tr>
+              <tr>
+                <td>Veracruz (Mexico)</td>
+                <td colspan="9" class="centralAm"></td>
+                <td colspan="1" class="involved"></td>
+                <td colspan="10" class="centralAm"></td>
+              </tr>
+              <tr>
+                <td>Corn Islands (Nicaragua)</td>
+                <td colspan="9" class="centralAm"></td>
+                <td colspan="6" class="involved"></td>
+                <td colspan="5" class="centralAm"></td>
+              </tr>
+              <tr>
+                <td>Virgin Islands</td>
+                <td colspan="9" class="centralAm"></td>
+                <td colspan="11" class="involved"></td>
+              </tr>
+              <tr>
+                <td>Dominican Republic</td>
+                <td colspan="9" class="centralAm"></td>
+                <td colspan="2" class="involved"></td>
+                <td colspan="3" class="centralAm"></td>
+                <td colspan="1" class="involved"></td>
+                <td colspan="5" class="centralAm"></td>
+              </tr>
+              <tr>
+                <td>Haiti</td>
+                <td colspan="9" class="centralAm"></td>
+                <td colspan="3" class="involved"></td>
+                <td colspan="8" class="centralAm"></td>
+              </tr>
+              <tr>
+                <td class="rotate oceania" rowspan="8"><div>Oceania</div></td>
+                <td>Samoa</td>
+                <td colspan="8" class="oceania"></td>
+                <td colspan="12" class="involved"></td>
+              </tr>
+              <tr>
+                <td>Guam</td>
+                <td colspan="8" class="oceania"></td>
+                <td colspan="12" class="involved"></td>
+              </tr>
+              <tr>
+                <td>Canton and Enderbury Islands (Kiribati)</td>
+                <td colspan="13" class="oceania"></td>
+                <td colspan="3" class="involved"></td>
+                <td colspan="4" class="oceania"></td>
+              </tr>
+              <tr>
+                <td>Nikumaroro (Kiribati)</td>
+                <td colspan="3" class="oceania"></td>
+                <td colspan="13" class="involved"></td>
+                <td colspan="4" class="oceania"></td>
+              </tr>
+              <tr>
+                <td>Marshall Islands</td>
+                <td colspan="12" class="oceania"></td>
+                <td colspan="8" class="involved"></td>
+              </tr>
+              <tr>
+                <td>Palau</td>
+                <td colspan="12" class="oceania"></td>
+                <td colspan="8" class="involved"></td>
+              </tr>
+              <tr>
+                <td>Federated States of Micronesia</td>
+                <td colspan="12" class="oceania"></td>
+                <td colspan="8" class="involved"></td>
+              </tr>
+              <tr>
+                <td>Northern Mariana Islands</td>
+                <td colspan="15" class="oceania"></td>
+                <td colspan="5" class="involved"></td>
+              </tr>
+              <tr>
+                <td class="rotate southAm" rowspan="4"><div>South America</div></td>
+                <td>Quita Sueno Bank (Colombia)</td>
+                <td colspan="4" class="southAm"></td>
+                <td colspan="13" class="involved"></td>
+                <td colspan="3" class="southAm"></td>
+              </tr>
+              <tr>
+                <td>Roncador Bank (Colombia)</td>
+                <td colspan="3" class="southAm"></td>
+                <td colspan="14" class="involved"></td>
+                <td colspan="3" class="southAm"></td>
+              </tr>
+              <tr>
+                <td>French Guiana (France)</td>
+                <td colspan="3" class="southAm"></td>
+                <td colspan="7" class="involved"></td>
+                <td colspan="10" class="southAm"></td>
+              </tr>
+              <tr>
+                <td>Falkland Islands (United Kingdom)</td>
+                <td colspan="1" class="southAm"></td>
+                <td colspan="1" class="involved"></td>
+                <td colspan="18" class="southAm"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+    </main>
+
+    <script src="../js/nav.js" charset="utf-8"></script>
+    <script src="../js/slides.js" charset="utf-8"></script>
+  </body>
+</html>
