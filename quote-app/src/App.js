@@ -35,9 +35,9 @@ class App extends Component {
 
     // Wire event handler for a new quote being added to firebaseApp
     // => is same as function (snapshot) {}
-    db.on('child_added', snapshot => {
+    db.on('child_added', (snapshot) => {
       // Update React state
-      let data = snapshot.val()
+      let data = snapshot.val();
 
       let quote = {
         id: snapshot.key,
@@ -72,13 +72,21 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Quotes Test App</h1>
         </header>
         <form onSubmit={this.addQuote.bind(this)}>
           <textarea rows="5" cols="50" ref={ this.textInput }></textarea>
-          <input type="text" ref={ this.authorInput }></input>
+          <div className="row"><input type="text" ref={ this.authorInput }></input></div>
           <input type="submit"/>
         </form>
+        <main>
+          { this.state.quotes.map(quote =>
+            <section key = { quote.id }>
+              <blockquote>{ quote.text }</blockquote>
+              <span className="author">{ quote.author }</span>
+            </section>
+          )}
+        </main>
       </div>
     );
   }
