@@ -204,39 +204,117 @@ var terms = [
   },
 
   {
-    category: 'Taxes',
-    word: 'Corporate',
-    definition: 'This is an example of a definition that is here to hold space.'
-  },
-
-  {
-    category: 'Regulation',
-    word: 'Pollution',
-    definition: 'This is an example of a definition that is here to hold space.'
-  },
-
-  {
-    category: 'Stability',
-    word: 'Coup',
-    definition: 'This is an example of a definition that is here to hold space.'
+    category: 'Foreign',
+    word: 'New Trend',
+    definition: 'Fad diets and celebrity endorsements can have a big impact on demand making obscure fruits and cheeses items worth buying at high end supermarkets.'
   },
 
   {
     category: 'Foreign',
-    word: 'Investment',
-    definition: 'This is an example of a definition that is here to hold space.'
+    word: 'Strong US Dollar',
+    definition: 'Everything is so cheap by comparison. The US is willing to pay top dollar for luxury crops because so little of their money buys so much of our products.'
   },
 
   {
-    category: 'Labor',
-    word: 'Strike',
-    definition: 'This is an example of a definition that is here to hold space.'
+    category: 'Foreign',
+    word: 'Embargo',
+    definition: 'When a larger, more powerful country cuts off trade to a country, usually for political reasons. This usually involves blocking any goods from coming in or out. This is why a good Cuban cigar is hard to find. '
   },
 
   {
-    category: 'Infrastructure',
-    word: 'Refrigeration',
-    definition: 'This is an example of a definition that is here to hold space.'
+    category: 'Foreign',
+    word: 'NAFTA',
+    definition: 'The North American Free Trade Agreement (NAFTA) signed in the early 90’s was meant to 	encourage trade between countries by eliminating pesky barriers like tariffs and fair wage practices. This 	means that large, foreign companies can dictate cost on your goods. This isn’t going to be good for legitimate business. This means that farmers may look into other, less reputable ways of making a living.'
+  },
+
+  {
+    category: 'Foreign',
+    word: 'IMF Loan',
+    definition: 'For countries just finishing up with a messy civil war or genocide, a loan from the IMF may seem like a quick fix. The only problem is that it comes at a price. The IMF gains oversight and control of the banking and trade aspects of governments that accept their help. As a result, trade tariffs tend to benefit companies and countries that work with the IMF. '
+  },
+
+  {
+    category: 'Foreign',
+    word: 'Foreign War',
+    definition: 'Wars abroad are great for business, so long as they stay abroad. Countries at war have less manpower and more need for basic goods and they will pay high prices to secure their supply lines.'
+  },
+
+  {
+    category: 'Foreign',
+    word: 'Global Depression',
+    definition: 'It’s hard out there for everyone. Countries are tightening their belts and spending less on exotic foreign goods in favor of building up their own industries.'
+  },
+
+  {
+    category: 'Foreign',
+    word: 'Human Rights Watch Investigation',
+    definition: 'This press really is bad press. Foreign investors get a bit squeamish when doing business in a country where systematic rape is being employed. '
+  },
+
+  {
+    category: 'Foreign',
+    word: 'Foreign Coup',
+    definition: 'Mohammad Mosaddegh, Jacobo Arbenz, and Michael Manley are just three examples of 	democratically elected officials that were deposed by the CIA. Every once and a while politician of a small country will decide not to play ball with a superpower like the US, China, or Russia and, depending on the ire this raises, they may be deposed covertly for it. While this may be bad news for legitimate foreign trade, the black market is booming.'
+  },
+
+  {
+    category: 'Foreign',
+    word: 'Trade Sanctions',
+    definition: 'It could have been the death threats to entire populations of other countries or the fourth illegal test but, for reasons beyond your control, the government has decided to go and get itself sanctioned. This means that trade going into and out of your country is going to be cut off along with your profits. Hopefully they can turn down the rhetoric soon.'
+  },
+
+  {
+    category: 'Foreign',
+    word: 'CIA Deals',
+    definition: 'The CIA has had its shadowy fingerprints on a fair share of shady activities in Latin America ranging from coups against democratically elected leaders to funding secret militias with drug money. Sometimes, they need to raise extra funds to engage in these activities and have even been shown to have aided in the smuggling of drugs into the US for sale.'
+  },
+
+  {
+    category: 'Foreign',
+    word: 'Tourism',
+    definition: 'Tourists come to your country looking for an exotic slice of paradise that they couldn’t get at home. Local cuisine and riskier endeavors are usually what peek their interests.'
+  },
+
+  {
+    category: 'Weather',
+    word: 'Drought',
+    definition: 'It hasn’t rained in ages. These conditions are hard on cash crops, especially those not native to the island.'
+  },
+
+  {
+    category: 'Weather',
+    word: 'Tropical Storm',
+    definition: 'Not a full blown hurricane but pretty darn close. Tons of rain and fierce winds are going to take their toll.'
+  },
+
+  {
+    category: 'Weather',
+    word: 'Plenty of Sun',
+    definition: 'Great tropical weather means a great harvest.'
+  },
+
+  {
+    category: 'Weather',
+    word: 'Hurricane',
+    definition: 'Not only have your crops been decimated but there isn’t anywhere to sell them anyways and you have no way of getting your goods out of the country with the infrastructure in tatters.'
+  },
+
+  {
+    category: 'Weather',
+    word: 'Earthquake',
+    definition: 'Your crops are fine but the country is not. The earthquake has done tons of damage to local infrastructure making it difficult for you to get goods to market.'
+  },
+
+  {
+    category: 'Weather',
+    word: 'Deforestation',
+    definition: 'An increased demand for farmland has lead to deforestation that has thrown the entire ecosystem out of wack.'
+  },
+
+  {
+    category: 'Weather',
+    word: 'Sea Level Rise',
+    definition: 'It is an undeniable fact that the sea level is rising. The further in the tide oges, the less farmland you have available.'
   }
 ];
 
@@ -293,7 +371,7 @@ function writeTerm(newTerm) {
   } else if (newTerm.category == "Weather")
   {
     document.getElementById("weather").appendChild(containerEl);
-  } 
+  }
 }
 
 for (var i = 0; i < terms.length; i++){
