@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import firebase from 'firebase';
+import Header from './components/common/Header';
+import Quote from './components/quote/Quote';
+import AddQuoteForm from './components/common/AddQuoteForm';
+import About from './components/about/About';
 
 // Initialize Firebase
 var config = {
@@ -19,10 +24,6 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    // Create input references
-    this.textInput = React.createRef();
-    this.authorInput = React.createRef();
-
     // Set up React State
     this.state = {
       quotes: []
@@ -34,7 +35,7 @@ class App extends Component {
     let db = firebaseApp.database().ref('quotes');
 
     // Wire event handler for a new quote being added to firebaseApp
-    // => is same as function (snapshot) {}
+    // => is same as "function (snapshot) {}"
     db.on('child_added', (snapshot) => {
       // Update React state
       let data = snapshot.val();
@@ -49,45 +50,36 @@ class App extends Component {
     })
   }
 
-  addQuote(event) {
-    event.preventDefault();
-
-    // Create new quote object from input values
-    let quote = {
-      author: this.authorInput.current.value,
-      text: this.textInput.current.value
-    }
-
+  addQuote(quote) {
     // Get db reference, add new quote, then reset textboxes
     let db = firebaseApp.database().ref('quotes');
-
     db.push(quote);
-
-    this.authorInput.current.value = '';
-    this.textInput.current.value = '';
   }
 
   render() {
+    const { quotes } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Quotes Test App</h1>
-        </header>
-        <form onSubmit={this.addQuote.bind(this)}>
-          <textarea rows="5" cols="50" ref={ this.textInput }></textarea>
-          <div className="row"><input type="text" ref={ this.authorInput }></input></div>
-          <input type="submit"/>
-        </form>
-        <main>
-          { this.state.quotes.map(quote =>
-            <section key = { quote.id }>
-              <blockquote>{ quote.text }</blockquote>
-              <span className="author">{ quote.author }</span>
-            </section>
-          )}
-        </main>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <AddQuoteForm addQuote={this.addQuote} />
+          <main>
+
+            {/* { this.state.quotes.map(quote =>
+              <Quote quote={quote} key={quote.id} />
+            )} */}
+
+            <Route exact={true} path="/" render={() => (
+              quotes.map(quote =>
+              <Quote quote={quote} key={quote.id} />
+              )
+            )} />
+
+            <Route path="/about" component={About} />
+          </main>
+
+        </div>
+      </BrowserRouter>
     );
   }
 }
