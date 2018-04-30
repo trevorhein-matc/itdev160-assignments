@@ -7,10 +7,13 @@
     <meta name="keywords" content="Farm, Simulator, Education">
     <meta name="author" content="Trevor Hein">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="../css/grid.css">
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/tabs.css">
     <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/sideNav.css">
   </head>
   <body>
     <!-- Navbar -->
@@ -26,15 +29,27 @@
 
     <main class="margin-buffer" id="Topmain">
 
-      <div class="tab">
-        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'general')" id="defaultOpen"><h2>General</h2></button>
-        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'products')"><h2>Products</h2></button>
-        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'taxes')"><h2>Taxes</h2></button>
-        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'regulation')"><h2>Regulation</h2></button>
-        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'stability')"><h2>Stability</h2></button>
-        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'foreign')"><h2>Foreign</h2></button>
-        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'labor')"><h2>Labor</h2></button>
-        <button type="button" class="tablinks tablinks-glossary" onclick="openStats(event, 'infrastructure')"><h2>Infrastructure</h2></button>
+      <div id="sideNav" class="side-nav-style">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="material-icons">close</i></a>
+        <a class="sideNavLink" href="#" onclick="openStats(event, 'general')" id="defaultOpen">General</a>
+        <a class="sideNavLink" href="#" onclick="openStats(event, 'products')">Products</a>
+        <a class="sideNavLink" href="#" onclick="openStats(event, 'taxes')">Taxes</a>
+        <a class="sideNavLink" href="#" onclick="openStats(event, 'regulation')">Regualation</a>
+        <a class="sideNavLink" href="#" onclick="openStats(event, 'stability')">Stability</a>
+        <a class="sideNavLink" href="#" onclick="openStats(event, 'foreign')">Foreign</a>
+        <a class="sideNavLink" href="#" onclick="openStats(event, 'labor')">Labor</a>
+        <a class="sideNavLink" href="#" onclick="openStats(event, 'infrastructure')">Infrastructure</a>
+      </div>
+
+      <div class="full-container">
+        <div class="row" id="side-nav-buffer">
+          <div class="col-1 main-section-nav main-section-nav-col-2">
+            <div class="main-section-span" onclick="openNav()"><i class="material-icons md-36">menu</i></div>
+          </div>
+          <div class="col-1 main-section-nav-col-10">
+            <h1 id="main-nav-header"></h1>
+          </div>
+        </div>
       </div>
 
       <div id="general" class="tabcontent">
@@ -72,7 +87,8 @@
     </main>
 
     <script src="../js/nav.js" charset="utf-8"></script>
-    <script src="../js/tabs.js" charset="utf-8"></script>
+    <script src="../js/sideNav.js" charset="utf-8"></script>
     <script src="../js/glossary.js" charset="utf-8"></script>
+    <script src="../js/glossaryTabs.js" charset="utf-8"></script>
   </body>
 </html>
