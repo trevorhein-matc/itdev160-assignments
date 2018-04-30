@@ -60,7 +60,40 @@
           <div class="container">
             <button class="timelineAccordion">Encounter 1492 - 1600</button>
             <div class="timelineSection">
-              <p>Section 1 place holder</p>
+              <div class="full-container">
+                <div class="slideshow-container">
+                  <div class="slide fade">
+                    <div class="dateText">1950</div>
+                    <h1>Test1</h1>
+                    <div class="caption">Caption One</div>
+                  </div>
+                  <div class="slide fade">
+                    <div class="dateText">1951</div>
+                    <h2>Test2</h2>
+                    <div class="caption">Caption Two</div>
+                  </div>
+                  <div class="slide fade">
+                    <div class="dateText">1952</div>
+                    <h3>Test3</h3>
+                    <div class="caption">Caption Three</div>
+                  </div>
+                  <div class="slide fade">
+                    <div class="dateText">1953</div>
+                    <h4>Test4</h4>
+                    <div class="caption">Caption Four</div>
+                  </div>
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  <!-- The dots/circles -->
+                  <br>
+                  <div style="text-align:center">
+                    <span><button onclick="currentSlide(1)" class="dot">1</button></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                  </div>
+                </div>
+              </div>
             </div>
             <button class="timelineAccordion">Cononialism 1600 - 1810</button>
             <div class="timelineSection">
@@ -151,6 +184,7 @@
     <script src="../js/sideNav.js" charset="utf-8"></script>
     <script src="../js/historyTabs.js" charset="utf-8"></script>
     <script src="../js/overviewInfo.js" charset="utf-8"></script>
+    <script src="../js/slides.js" charset="utf-8"></script>
     <script src="../js/timelineAccordion.js" charset="utf-8"></script>
   </body>
 </html>
