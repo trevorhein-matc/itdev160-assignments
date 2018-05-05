@@ -1,38 +1,3 @@
-/*
-var years = [];
-
-function Year (id, number) {
-  this.id = id;
-  this.number = number;
-}
-
-function addYearElement (year) {
-  var yearEl = document.getElementById('year-list');
-  var newYearEl = document.createElement('td');
-  var numberEl = document.createTextNode(year.number);
-
-  newYearEl.setAttribute('id', year.id);
-  newYearEl.appendChild(numberEl);
-  yearEl.appendChild(newYearEl);
-}
-
-function addYear (event) {
-  var id = 'year-' + years.length;
-  var number = 1956 + years.length;
-
-  var year = new Year(id, number);
-  years.push(year);
-
-  addYearElement(year);
-}
-
-function init () {
-  document.getElementById('add-year').onclick = addYear;
-}
-
-init ();
-*/
-
 var bank = 25;
 var totalInvest = 0;
 
@@ -247,24 +212,67 @@ var yieldCalc = function() {
   var illegalCropAmount = crops[3].amount;
 
 
+
 }
 
 
-var writeYieldInfo = function(cropYield) {
-  var selector = cropYield.selector,
+var writeYieldInfo = function(crops) {
+  var selector = crops.selector,
     nameEl = getEl(selector + '-yieldName'),
     amountEl = getEl(selector + '-yieldAmount'),
     totalEl = getEl(selector + '-yieldTotal')
 
-    nameEl.textContent = cropYield.name;
-    amountEl.textContent = cropYield.getFormattedAmount();
-    totalEl.textContent = cropYield.getFormattedYield();
+    nameEl.textContent = crops.name;
+    amountEl.textContent = crops.getFormattedAmount();
+    totalEl.textContent = crops.getFormattedYield();
 }
 
 // Writes the crops table to the DOM
 var yieldButton = function() {
   for (var i = 0; i < crops.length; i++) {
-    var cropYield = new Crop(crops[i]);
-    writeCropInfo(cropYield);
+    var crop = new Crop(crops[i]);
+    writeYieldInfo(crop);
   }
 }
+
+
+
+
+
+
+
+
+/*
+var years = [];
+
+function Year (id, number) {
+  this.id = id;
+  this.number = number;
+}
+
+function addYearElement (year) {
+  var yearEl = document.getElementById('year-list');
+  var newYearEl = document.createElement('td');
+  var numberEl = document.createTextNode(year.number);
+
+  newYearEl.setAttribute('id', year.id);
+  newYearEl.appendChild(numberEl);
+  yearEl.appendChild(newYearEl);
+}
+
+function addYear (event) {
+  var id = 'year-' + years.length;
+  var number = 1956 + years.length;
+
+  var year = new Year(id, number);
+  years.push(year);
+
+  addYearElement(year);
+}
+
+function init () {
+  document.getElementById('add-year').onclick = addYear;
+}
+
+init ();
+*/
