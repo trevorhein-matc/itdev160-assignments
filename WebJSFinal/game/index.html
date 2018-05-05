@@ -138,6 +138,11 @@ td<!DOCTYPE html>
           <div class="row">
             <h2>Crop Yields</h2>
           </div>
+
+          <div class="row">
+            <h3 id="weatherCondition"></h3>
+          </div>
+
           <div class="row">
             <table>
               <thead>
@@ -169,57 +174,40 @@ td<!DOCTYPE html>
           </div>
           <div class="row">
             <h2>The Markets</h2>
+            <td><button type="button" class="btn btn-default" onclick="domEffectCalc()">Calculate Markets</button></td>
           </div>
           <div class="row">
+            <div class="row">
+              <h2 id="domEconCondition"></h2>
+            </div>
+            <div class="row">
+              <h2 id="foreignEconCondition"></h2>
+            </div>
             <table>
               <thead>
-                <th>Market</th>
-                <th>Access</th>
-                <th>Demand</th>
-                <th>Tarriff Rate</th>
-                <th>Transport</th>
+                <th>Crop</th>
+                <th>Domestic Value</th>
+                <th>Foreign Value</th>
               </thead>
               <tr>
-                <td>Local</td>
-                <td>Market Decision</td>
-                <td>Demand Calc</td>
-                <td>Tarriff Calc</td>
-                <td>Transport Calc</td>
+                <td id="c1-marketName"></td>
+                <td id="c1-domValue"></td>
+                <td id="c1-foreignValue"></td>
               </tr>
               <tr>
-                <td>Domestic</td>
-                <td>Market Decision</td>
-                <td>Demand Calc</td>
-                <td>Tarriff Calc</td>
-                <td>Transport Calc</td>
+                <td id="c2-marketName"></td>
+                <td id="c2-domValue"></td>
+                <td id="c2-foreignValue"></td>
               </tr>
               <tr>
-                <td>Neighbors</td>
-                <td>Market Decision</td>
-                <td>Demand Calc</td>
-                <td>Tarriff Calc</td>
-                <td>Transport Calc</td>
+                <td id="c3-marketName"></td>
+                <td id="c3-domValue"></td>
+                <td id="c3-foreignValue"></td>
               </tr>
               <tr>
-                <td>Non-Aligned</td>
-                <td>Market Decision</td>
-                <td>Demand Calc</td>
-                <td>Tarriff Calc</td>
-                <td>Transport Calc</td>
-              </tr>
-              <tr>
-                <td>US Market</td>
-                <td>Market Decision</td>
-                <td>Demand Calc</td>
-                <td>Tarriff Calc</td>
-                <td>Transport Calc</td>
-              </tr>
-              <tr>
-                <td>USSR Market</td>
-                <td>Market Decision</td>
-                <td>Demand Calc</td>
-                <td>Tarriff Calc</td>
-                <td>Transport Calc</td>
+                <td id="c4-marketName"></td>
+                <td id="c4-domValue"></td>
+                <td id="c4-foreignValue"></td>
               </tr>
             </table>
           </div>

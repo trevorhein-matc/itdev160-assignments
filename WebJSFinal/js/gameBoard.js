@@ -5,37 +5,45 @@ var crops = [
   {
     name: 'Domestic',
     cost: 1,
-    value: 1,
+    value: 2,
     amount: 0,
     total: 0,
     yield: 0,
+    domValue: 0,
+    foreignValue: 0,
     selector: 'c1'
   },
   {
     name: 'Livestock',
-    cost: 1,
-    value: 2,
+    cost: 2,
+    value: 4,
     amount: 0,
     total: 0,
     yield: 0,
+    domValue: 0,
+    foreignValue: 0,
     selector: 'c2'
   },
   {
     name: 'Cash',
-    cost: 2,
-    value: 2,
+    cost: 3,
+    value: 5,
     amount: 0,
     total: 0,
     yield: 0,
+    domValue: 0,
+    foreignValue: 0,
     selector: 'c3'
   },
   {
     name: 'Illegal',
-    cost: 3,
-    value: 3,
+    cost: 2,
+    value: 5,
     amount: 0,
     total: 0,
     yield: 0,
+    domValue: 0,
+    foreignValue: 0,
     selector: 'c4'
   }
 ];
@@ -131,6 +139,8 @@ function Crop(crops) {
   this.amount = crops.amount;
   this.total = crops.cost * crops.amount;
   this.yield = crops.yield;
+  this.domValue = crops.domValue;
+  this.foeignValue = crops.foreignValue;
   this.selector = crops.selector;
 
   this.getFormattedCost = function() {
@@ -152,6 +162,14 @@ function Crop(crops) {
   this.getFormattedYield = function() {
     return this.yield.toLocaleString();
   };
+
+  this.getFormattedDomValue = function() {
+    return this.domValue.toLocaleString();
+  }
+
+  this.getFormattedForeignValue = function() {
+    return this.foreignValue.toLocaleString();
+  }
 }
 
 var writeCropInfo = function(crop) {
@@ -205,14 +223,91 @@ var writeCropTotalCost = function(crops) {
   investEl.innerHTML = totalInvest;
 }
 
+
+
+
 var yieldCalc = function() {
   var domCropAmount = crops[0].amount;
   var livestockAmount = crops[1].amount;
   var cashCropAmount = crops[2].amount;
   var illegalCropAmount = crops[3].amount;
 
+  var weatherConditionEl = getEl('weatherCondition')
+  var weatherText = "Test Weather";
 
+  var weatherPicker = Math.floor(Math.random() * 3) + 1;
+  var weatherSwitch = Math.floor(Math.random() * 2) + 1;
 
+  if (weatherPicker == 1)
+  {
+    switch (weatherSwitch)
+    {
+      case 1:
+        weatherText = "A lot of rain";
+        crops[0].yield = Math.ceil(domCropAmount * 1.75);
+        crops[1].yield = Math.ceil((livestockAmount * 1.25));
+        crops[2].yield = Math.floor((cashCropAmount * .75));
+        crops[3].yield = Math.ceil((illegalCropAmount * 1.25));
+        break;
+      case 2:
+        weatherText = "Pretty dry";
+        crops[0].yield = Math.floor(domCropAmount * .75);
+        crops[1].yield = livestockAmount;
+        crops[2].yield = Math.ceil((cashCropAmount * 1.25));
+        crops[3].yield = Math.ceil((illegalCropAmount * 1.25));
+        break;
+    }
+  }
+  else if (weatherPicker == 2)
+  {
+    switch (weatherSwitch) {
+      case 1:
+        weatherText = "Plenty of sun";
+        crops[0].yield = (domCropAmount * 3);
+        crops[1].yield = Math.ceil(livestockAmount * 1.75);
+        crops[2].yield = Math.ceil((cashCropAmount * 2.25));
+        crops[3].yield = (illegalCropAmount * 2);
+        break;
+      case 2:
+        weatherText = "Ideal conditions";
+        crops[0].yield = Math.ceil(domCropAmount * 3.5);
+        crops[1].yield = (livestockAmount * 2);
+        crops[2].yield = Math.ceil((cashCropAmount * 2.5));
+        crops[3].yield = Math.ceil((illegalCropAmount * 2.25));
+        break;
+    }
+  }
+  else
+  {
+    switch (weatherSwitch)
+    {
+      case 1:
+        weatherText = "Hurricane";
+        crops[0].yield = Math.floor(domCropAmount * .75);
+        crops[1].yield = Math.floor((livestockAmount * .5));
+        crops[2].yield = Math.floor((cashCropAmount * .25));
+        crops[3].yield = Math.ceil((illegalCropAmount * 1.25));
+        break;
+      case 2:
+        weatherText = "Earthquake";
+        if (crops[1].amount <= 10)
+        {
+          crops[0].yield = (domCropAmount * 1);
+          crops[1].yield = Math.ceil((livestockAmount * .75));
+          crops[2].yield = Math.floor((cashCropAmount * .75));
+          crops[3].yield = Math.ceil((illegalCropAmount * 1.25));
+        }
+        else {
+          weatherText = "Mudslide";
+          crops[0].yield = Math.floor(domCropAmount * .25);
+          crops[1].yield = Math.floor((livestockAmount * .5));
+          crops[2].yield = Math.floor((cashCropAmount * .25));
+          crops[3].yield = Math.floor((illegalCropAmount * .5));
+        }
+        break;
+    }
+  }
+  weatherConditionEl.innerHTML = weatherText;
 }
 
 
@@ -227,7 +322,7 @@ var writeYieldInfo = function(crops) {
     totalEl.textContent = crops.getFormattedYield();
 }
 
-// Writes the crops table to the DOM
+// Writes the yield table to the DOM
 var yieldButton = function() {
   for (var i = 0; i < crops.length; i++) {
     var crop = new Crop(crops[i]);
@@ -235,7 +330,39 @@ var yieldButton = function() {
   }
 }
 
+var domEffectCalc = function() {
+  var domCropYield = crops[0].yield;
+  var livestockYield = crops[1].yield;
+  var cashCropYield = crops[2].yield;
+  var illegalCropAmount = crops[3].yield;
 
+  var domCropBaseValue = crops[0].value;
+  var livestockBaseValue = crops[1].value;
+  var cashCropBaseValue = crops[2].value;
+  var illegalCropBaseValue = crops[3].value;
+
+  var domEconConditionEl = getEl('domEconCondition');
+  var domEconConditionText = "Test DomEconCondition";
+
+  var foreignEconConditionEl = getEl('foreignEconCondition');
+  var foreignEconConditionText = "Test foreignEconCondition";
+
+  var weatherPicker = Math.floor(Math.random() * 3) + 1;
+  var weatherSwitch = Math.floor(Math.random() * 2) + 1;
+
+
+
+  domEconConditionEl.innerHTML = domEconConditionText;
+  foreignEconConditionEl.innerHTML = foreignEconConditionText;
+}
+
+
+
+// var writeMarketInfo = function(crops) {
+//   var selector = crops.selector,
+//     nameEl = getEl(selector + '-marketName'),
+//
+// }
 
 
 
