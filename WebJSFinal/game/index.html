@@ -93,78 +93,6 @@ td<!DOCTYPE html>
                 <td id="c4-total"></td>
                 <td><button type="button" class="btn btn-default" onclick="sugarPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="sugarSellBtn()">Less</button></td>
               </tr>
-              <tr>
-                <td id="c5-name"></td>
-                <td id="c5-type"></td>
-                <td id="c5-value"></td>
-                <td id="c5-cost"></td>
-                <td id="c5-amount"></td>
-                <td id="c5-total"></td>
-                <td><button type="button" class="btn btn-default" onclick="coffeePurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="coffeeSellBtn()">Less</button></td>
-              </tr>
-              <tr>
-                <td id="c6-name"></td>
-                <td id="c6-type"></td>
-                <td id="c6-value"></td>
-                <td id="c6-cost"></td>
-                <td id="c6-amount"></td>
-                <td id="c6-total"></td>
-                <td><button type="button" class="btn btn-default" onclick="cottonPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="cottonSellBtn()">Less</button></td>
-              </tr>
-              <tr>
-                <td id="c7-name"></td>
-                <td id="c7-type"></td>
-                <td id="c7-value"></td>
-                <td id="c7-cost"></td>
-                <td id="c7-amount"></td>
-                <td id="c7-total"></td>
-                <td><button type="button" class="btn btn-default" onclick="tobaccoPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="tobaccoSellBtn()">Less</button></td>
-              </tr>
-              <tr>
-                <td id="c8-name"></td>
-                <td id="c8-type"></td>
-                <td id="c8-value"></td>
-                <td id="c8-cost"></td>
-                <td id="c8-amount"></td>
-                <td id="c8-total"></td>
-                <td><button type="button" class="btn btn-default" onclick="goatsPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="goatsSellBtn()">Less</button></td>
-              </tr>
-              <tr>
-                <td id="c9-name"></td>
-                <td id="c9-type"></td>
-                <td id="c9-value"></td>
-                <td id="c9-cost"></td>
-                <td id="c9-amount"></td>
-                <td id="c9-total"></td>
-                <td><button type="button" class="btn btn-default" onclick="cattlePurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="cattleSellBtn()">Less</button></td>
-              </tr>
-              <tr>
-                <td id="c10-name"></td>
-                <td id="c10-type"></td>
-                <td id="c10-value"></td>
-                <td id="c10-cost"></td>
-                <td id="c10-amount"></td>
-                <td id="c10-total"></td>
-                <td><button type="button" class="btn btn-default" onclick="marijuanaPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="marijuanaSellBtn()">Less</button></td>
-              </tr>
-              <tr>
-                <td id="c11-name"></td>
-                <td id="c11-type"></td>
-                <td id="c11-value"></td>
-                <td id="c11-cost"></td>
-                <td id="c11-amount"></td>
-                <td id="c11-total"></td>
-                <td><button type="button" class="btn btn-default" onclick="cocaPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="cocaSellBtn()">Less</button></td>
-              </tr>
-              <tr>
-                <td id="c12-name"></td>
-                <td id="c12-type"></td>
-                <td id="c12-value"></td>
-                <td id="c12-cost"></td>
-                <td id="c12-amount"></td>
-                <td id="c12-total"></td>
-                <td><button type="button" class="btn btn-default" onclick="opiumPurchaseBtn()">More</button><button type="button" class="btn btn-default" onclick="opiumSellBtn()">Less</button></td>
-              </tr>
             </table>
           </div>
           <div class="row">
@@ -196,6 +124,7 @@ td<!DOCTYPE html>
               <tr>
                 <td id="bank"></td>
                 <td id="invested"></td>
+                <td><button type="button" class="btn btn-default" onclick="yieldButton()">Confirm</button></td>
               </tr>
             </table>
           </div>
@@ -213,15 +142,15 @@ td<!DOCTYPE html>
             <table>
               <thead>
                 <th>Crop</th>
-                <th>Weather Effect</th>
-                <th>Random Effect</th>
-                <th>Total Yield Amount</th>
+                <th>Amount Planted</th>
+                <th>Yield</th>
               </thead>
               <tr>
-                <td>Plantains</td>
-                <td>Weather Calc</td>
-                <td>Random Calc</td>
-                <td>Total Calc</td>
+                <tr>
+                  <td id="c1-yieldName"></td>
+                  <td id="c1-yieldAmount"></td>
+                  <td id="c1-yieldTotal"></td>
+                </tr>
               </tr>
               <tr>
                 <td>Bananas</td>
