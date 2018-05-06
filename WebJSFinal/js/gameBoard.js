@@ -140,7 +140,7 @@ function Crop(crops) {
   this.total = crops.cost * crops.amount;
   this.yield = crops.yield;
   this.domValue = crops.domValue;
-  this.foeignValue = crops.foreignValue;
+  this.foreignValue = crops.foreignValue;
   this.selector = crops.selector;
 
   this.getFormattedCost = function() {
@@ -223,8 +223,7 @@ var writeCropTotalCost = function(crops) {
   investEl.innerHTML = totalInvest;
 }
 
-
-
+// Yield Calc
 
 var yieldCalc = function() {
   var domCropAmount = crops[0].amount;
@@ -310,7 +309,6 @@ var yieldCalc = function() {
   weatherConditionEl.innerHTML = weatherText;
 }
 
-
 var writeYieldInfo = function(crops) {
   var selector = crops.selector,
     nameEl = getEl(selector + '-yieldName'),
@@ -330,11 +328,13 @@ var yieldButton = function() {
   }
 }
 
+// Dom crop calc effects
+
 var domEffectCalc = function() {
   var domCropYield = crops[0].yield;
   var livestockYield = crops[1].yield;
   var cashCropYield = crops[2].yield;
-  var illegalCropAmount = crops[3].yield;
+  var illegalCropYield = crops[3].yield;
 
   var domCropBaseValue = crops[0].value;
   var livestockBaseValue = crops[1].value;
@@ -344,29 +344,371 @@ var domEffectCalc = function() {
   var domEconConditionEl = getEl('domEconCondition');
   var domEconConditionText = "Test DomEconCondition";
 
+  var domEconPicker = Math.floor(Math.random() * 2) + 1;
+  var goodDomEconSwitch = Math.floor(Math.random() * 11) + 1;
+  var badDomEconSwitch = Math.floor(Math.random() * 16) + 1;
+
+  if (domEconPicker == 1) {
+    switch (goodDomEconSwitch) {
+      case 1:
+        domEconConditionText = "Land Redistribution";
+        crops[0].domValue = Math.ceil((domCropYield * domCropBaseValue)* 1.75);
+        crops[1].domValue = ((livestockYield * livestockBaseValue) * 2);
+        crops[2].domValue = Math.ceil((cashCropYield * cashCropBaseValue) * 1.25);
+        crops[3].domValue = Math.floor((illegalCropYield * illegalCropBaseValue) * .5);
+        break;
+      case 2:
+        domEconConditionText = "Public Works Projects";
+        crops[0].domValue = Math.ceil((domCropYield * domCropBaseValue) * 1.25);
+        crops[1].domValue = Math.ceil((livestockYield * livestockBaseValue) * 1.5);
+        crops[2].domValue = Math.ceil((cashCropYield * cashCropBaseValue) * 1.25);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.5);
+        break;
+      case 3:
+        domEconConditionText = "Federal Infrastructure Investment";
+        crops[0].domValue = Math.ceil((domCropYield * domCropBaseValue) * 1.5);
+        crops[1].domValue = Math.ceil((livestockYield * livestockBaseValue) * .75);
+        crops[2].domValue = Math.ceil((cashCropYield * cashCropBaseValue) * 1.25);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * .5);
+        break;
+      case 4:
+        domEconConditionText = "Industrialization";
+        crops[0].domValue = Math.ceil((domCropYield * domCropBaseValue) * .75);
+        crops[1].domValue = (livestockYield * livestockBaseValue);
+        crops[2].domValue = Math.ceil((cashCropYield * cashCropBaseValue) * 1.5);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+      case 5:
+        domEconConditionText = "Prohibition";
+        crops[0].domValue = Math.ceil((domCropYield * domCropBaseValue) * 1.25);
+        crops[1].domValue = (livestockYield * livestockBaseValue);
+        crops[2].domValue = Math.ceil((cashCropYield * cashCropBaseValue) * 1.25);
+        crops[3].domValue = ((illegalCropYield * illegalCropBaseValue) * 2);
+        break;
+      case 6:
+        domEconConditionText = "New Trend";
+        crops[0].domValue = Math.ceil((domCropYield * domCropBaseValue) * 1.5);
+        crops[1].domValue = Math.ceil((livestockYield * livestockBaseValue) * 1.5);
+        crops[2].domValue = Math.ceil((cashCropYield * cashCropBaseValue) * 1.75);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+      case 7:
+        domEconConditionText = "High Import Tariffs";
+        crops[0].domValue = Math.ceil((domCropYield * domCropBaseValue) * 1.75);
+        crops[1].domValue = (livestockYield * livestockBaseValue) * 2;
+        crops[2].domValue = (cashCropYield * cashCropBaseValue) * 2;
+        crops[3].domValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+      case 8:
+        domEconConditionText = "Open Borders";
+        crops[0].domValue = Math.floor((domCropYield * domCropBaseValue) * .75);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .5);
+        crops[2].domValue = ((cashCropYield * cashCropBaseValue) * 2);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.5);
+        break;
+      case 9:
+        domEconConditionText = "Tax Cuts";
+        crops[0].domValue = Math.ceil((domCropYield * domCropBaseValue) * 1.25);
+        crops[1].domValue = Math.ceil((livestockYield * livestockBaseValue) * 1.75);
+        crops[2].domValue = ((cashCropYield * cashCropBaseValue) * 2);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+      case 10:
+        domEconConditionText = "Drug Legalization";
+        crops[0].domValue = Math.ceil((domCropYield * domCropBaseValue) * 1.25);
+        crops[1].domValue = Math.ceil((livestockYield * livestockBaseValue) * 1.25);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .75);
+        crops[3].domValue = Math.floor((illegalCropYield * illegalCropBaseValue) * .5);
+        break;
+      case 11:
+        domEconConditionText = "Buy Local";
+        crops[0].domValue = Math.ceil((domCropYield * domCropBaseValue) * 1.75);
+        crops[1].domValue = Math.ceil((livestockYield * livestockBaseValue) * 1.75);
+        crops[2].domValue = Math.ceil((cashCropYield * cashCropBaseValue) * 1.25);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+    }
+  } else {
+    switch (badDomEconSwitch) {
+      case 1:
+        domEconConditionText = "Drug War";
+        crops[0].domValue = (domCropYield * domCropBaseValue);
+        crops[1].domValue = (livestockYield * livestockBaseValue);
+        crops[2].domValue = Math.ceil((cashCropYield * cashCropBaseValue) * 1.25);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.5);
+        break;
+      case 2:
+        domEconConditionText = "Civil War";
+        crops[0].domValue = Math.floor((domCropYield * domCropBaseValue) * .75);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .5);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .25);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.75);
+        break;
+      case 3:
+        domEconConditionText = "Political Unrest";
+        crops[0].domValuel = (domCropYield * domCropBaseValue);
+        crops[1].domValue = (livestockYield * livestockBaseValue);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .75);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.5);
+        break;
+      case 4:
+        domEconConditionText = "Protests";
+        crops[0].domValue = (domCropYield * domCropBaseValue);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .75);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .5);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+      case 5:
+        domEconConditionText = "Strikes";
+        crops[0].domValue = Math.floor((domCropYield * domCropBaseValue) * .5);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .25);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .25);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+      case 6:
+        domEconConditionText = "Military Coup";
+        crops[0].domValue = Math.floor((domCropYield * domCropBaseValue) * .75);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .75);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .75);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+      case 7:
+        domEconConditionText = "Genocide";
+        crops[0].domValue = Math.floor((domCropYield * domCropBaseValue) * .5);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .25);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .25);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.5);
+        break;
+      case 8:
+        domEconConditionText = "High Taxes";
+        crops[0].domValue = (domCropYield * domCropBaseValue);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .75);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .5);
+        crops[3].domValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+      case 9:
+        domEconConditionText = "Low Import Tariffs";
+        crops[0].domValue = Math.floor((domCropYield * domCropBaseValue) * .75);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .5);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .75);
+        crops[3].domValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+      case 10:
+        domEconConditionText = "Inflation";
+        crops[0].domValue = Math.floor((domCropYield * domCropBaseValue) * .75);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .5);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .5);
+        crops[3].domValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+      case 11:
+        domEconConditionText = "Government Corruption";
+        crops[0].domValue = (domCropYield * domCropBaseValue);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .75);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .75);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+      case 12:
+        domEconConditionText = "Monopoly";
+        crops[0].domValue = Math.floor((domCropYield * domCropBaseValue) * .5);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .5);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .5);
+        crops[3].domValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+      case 13:
+        domEconConditionText = "Government Price Lock";
+        crops[0].domValue = Math.ceil((domCropYield * domCropBaseValue) * 1.25);
+        crops[1].domValue = (livestockYield * livestockBaseValue);
+        crops[2].domValue = (cashCropYield * cashCropBaseValue);
+        crops[3].domValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+      case 14:
+        domEconConditionText = "Depression";
+        crops[0].domValue = Math.floor((domCropYield * domCropBaseValue) * .75);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .5);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .25);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+      case 15:
+        domEconConditionText = "Paramilitary Forces";
+        crops[0].domValue = (domCropYield * domCropBaseValue);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .75);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .75);
+        crops[3].domValue = Math.floor((illegalCropYield * illegalCropBaseValue) * .75);
+        break;
+      case 16:
+        domEconConditionText = "Guerrilla Warfare";
+        crops[0].domValue = (domCropYield * domCropBaseValue);
+        crops[1].domValue = Math.floor((livestockYield * livestockBaseValue) * .5);
+        crops[2].domValue = Math.floor((cashCropYield * cashCropBaseValue) * .25);
+        crops[3].domValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.75);
+        break;
+    }
+  }
+  domEconConditionEl.innerHTML = domEconConditionText;
+}
+
+// Foreign Crop Effects
+
+var foreignEffectCalc = function() {
+  var domCropYield = crops[0].yield;
+  var livestockYield = crops[1].yield;
+  var cashCropYield = crops[2].yield;
+  var illegalCropYield = crops[3].yield;
+
+  var domCropBaseValue = crops[0].value;
+  var livestockBaseValue = crops[1].value;
+  var cashCropBaseValue = crops[2].value;
+  var illegalCropBaseValue = crops[3].value;
+
   var foreignEconConditionEl = getEl('foreignEconCondition');
   var foreignEconConditionText = "Test foreignEconCondition";
 
-  var weatherPicker = Math.floor(Math.random() * 3) + 1;
-  var weatherSwitch = Math.floor(Math.random() * 2) + 1;
+  var foreignEconPicker = Math.floor(Math.random() * 2) + 1;
+  var goodForeignEconSwitch = Math.floor(Math.random() * 7) + 1;
+  var badForeignEconSwitch = Math.floor(Math.random() * 9) + 1;
 
-
-
-  domEconConditionEl.innerHTML = domEconConditionText;
+  if (foreignEconPicker == 1) {
+    switch (goodForeignEconSwitch) {
+      case 1:
+        foreignEconConditionText = "New Trend";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * 1.5);
+        crops[1].foreignValue = Math.ceil((livestockYield * livestockBaseValue) * 1.25);
+        crops[2].foreignValue = Math.ceil((cashCropYield * cashCropBaseValue) * 1.25);
+        crops[3].foreignValue = Math.ceil((illegalCropYield * illegalCropBaseValue) * 1.75);
+        break;
+      case 2:
+        foreignEconConditionText = "Foreign War";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * 1.5);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * 1.5);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * .5);
+        crops[3].foreignValue = Math.floor((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+      case 3:
+        foreignEconConditionText = "Tourism";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * 1.75);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * 1.25);
+        crops[2].foreignValue = ((cashCropYield * cashCropBaseValue) * 2);
+        crops[3].foreignValue = Math.floor((illegalCropYield * illegalCropBaseValue) * 1.75);
+        break;
+      case 4:
+        foreignEconConditionText = "CIA Deal";
+        crops[0].foreignValue = (domCropYield * domCropBaseValue);
+        crops[1].foreignValue = (livestockYield * livestockBaseValue);
+        crops[2].foreignValue = (cashCropYield * cashCropBaseValue);
+        crops[3].foreignValue = ((illegalCropYield * illegalCropBaseValue) * 2);
+        break;
+      case 5:
+        foreignEconConditionText = "Globalization";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * 1.5);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * 1.25);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * 1.25);
+        crops[3].foreignValue = Math.floor((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+      case 6:
+        foreignEconConditionText = "Colonial Reparations";
+        crops[0].foreignValue = ((domCropYield * domCropBaseValue) * 2);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * 1.5);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * 1.5);
+        crops[3].foreignValue = Math.floor((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+      case 7:
+        foreignEconConditionText = "Exclusive Trade Agreement";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * 1.5);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * 1.5);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * 1.5);
+        crops[3].foreignValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+    }
+  } else {
+    switch (badForeignEconSwitch) {
+      case 1:
+        foreignEconConditionText = "Embargo";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * 1.5);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * 1.25);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * .25);
+        crops[3].foreignValue = Math.floor((illegalCropYield * illegalCropBaseValue) * .25);
+        break;
+      case 2:
+        foreignEconConditionText = "NAFTA";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * .75);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * .5);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * 1.25);
+        crops[3].foreignValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+      case 3:
+        foreignEconConditionText = "IMF Loan";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * .75);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * .5);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * .75);
+        crops[3].foreignValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+      case 4:
+        foreignEconConditionText = "Global Depression";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * .75);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * .5);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * .25);
+        crops[3].foreignValue = Math.floor((illegalCropYield * illegalCropBaseValue) * 1.5);
+        break;
+      case 5:
+        foreignEconConditionText = "Sustainably Sourced";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * 1.25);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * 1.5);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * 1.25);
+        crops[3].foreignValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+      case 6:
+        foreignEconConditionText = "Foreign Private Investment";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * .75);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * .75);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * .5);
+        crops[3].foreignValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+      case 7:
+        foreignEconConditionText = "Foreign Sponsored Coup";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * .75);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * .5);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * .25);
+        crops[3].foreignValue = Math.floor((illegalCropYield * illegalCropBaseValue) * 1.25);
+        break;
+      case 8:
+        foreignEconConditionText = "Trade Sanctions";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * .75);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * .75);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * .25);
+        crops[3].foreignValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+      case 9:
+        foreignEconConditionText = "Foreign Subsidies";
+        crops[0].foreignValue = Math.ceil((domCropYield * domCropBaseValue) * .5);
+        crops[1].foreignValue = Math.floor((livestockYield * livestockBaseValue) * .5);
+        crops[2].foreignValue = Math.floor((cashCropYield * cashCropBaseValue) * .75);
+        crops[3].foreignValue = (illegalCropYield * illegalCropBaseValue);
+        break;
+    }
+  }
   foreignEconConditionEl.innerHTML = foreignEconConditionText;
 }
 
+var foreignEffectCalc = function() {
+  var foreignEconConditionEl = getEl('foreignEconCondition');
+  var foreignEconConditionText = "Test foreignEconCondition";
+}
 
+var writeEffectCalc = function(crops) {
+  var selector = crops.selector,
+    domesticEconValueEl = getEl(selector + '-domValue'),
+    foreignEconValueEl = getEl(selector + '-foreignValue')
 
-// var writeMarketInfo = function(crops) {
-//   var selector = crops.selector,
-//     nameEl = getEl(selector + '-marketName'),
-//
-// }
+    domesticEconValueEl.textContent = crops.getFormattedDomValue();
+    foreignEconValueEl.textContent = crops.getFormattedForeignValue();
+}
 
-
-
-
+var EffectCalcButton = function () {
+  for (var i = 0; i < crops.length; i++) {
+    var crop = new Crop(crops[i]);
+    writeEffectCalc(crop);
+  }
+}
 
 
 /*

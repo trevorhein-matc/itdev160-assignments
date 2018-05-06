@@ -174,7 +174,7 @@ td<!DOCTYPE html>
           </div>
           <div class="row">
             <h2>The Markets</h2>
-            <td><button type="button" class="btn btn-default" onclick="domEffectCalc()">Calculate Markets</button></td>
+            <td><button type="button" class="btn btn-default" onclick="domEffectCalc();foreignEffectCalc();">Calculate Markets</button></td>
           </div>
           <div class="row">
             <div class="row">
@@ -190,24 +190,28 @@ td<!DOCTYPE html>
                 <th>Foreign Value</th>
               </thead>
               <tr>
-                <td id="c1-marketName"></td>
-                <td id="c1-domValue"></td>
-                <td id="c1-foreignValue"></td>
+                <td>Domestic</td>
+                <td id="c1-domValue">?</td>
+                <td id="c1-foreignValue">?</td>
               </tr>
               <tr>
-                <td id="c2-marketName"></td>
-                <td id="c2-domValue"></td>
-                <td id="c2-foreignValue"></td>
+                <td>Livestock</td>
+                <td id="c2-domValue">?</td>
+                <td id="c2-foreignValue">?</td>
               </tr>
               <tr>
-                <td id="c3-marketName"></td>
-                <td id="c3-domValue"></td>
-                <td id="c3-foreignValue"></td>
+                <td>Cash</td>
+                <td id="c3-domValue">?</td>
+                <td id="c3-foreignValue">?</td>
               </tr>
               <tr>
-                <td id="c4-marketName"></td>
-                <td id="c4-domValue"></td>
-                <td id="c4-foreignValue"></td>
+                <td>Illegal</td>
+                <td id="c4-domValue">?</td>
+                <td id="c4-foreignValue">?</td>
+              </tr>
+              <tr>
+                <td><button type="button" class="btn btn-default" onclick="EffectCalcButton()">Sell Domestic</button></td>
+                <td><button type="button" class="btn btn-default" onclick="EffectCalcButton()">Sell Foreign</button></td>
               </tr>
             </table>
           </div>
