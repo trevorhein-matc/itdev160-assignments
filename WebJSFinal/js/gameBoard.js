@@ -689,10 +689,12 @@ var foreignEffectCalc = function() {
   foreignEconConditionEl.innerHTML = foreignEconConditionText;
 }
 
-var foreignEffectCalc = function() {
-  var foreignEconConditionEl = getEl('foreignEconCondition');
-  var foreignEconConditionText = "Test foreignEconCondition";
-}
+// var foreignEffectCalc = function() {
+//   var foreignEconConditionEl = getEl('foreignEconCondition');
+//   var foreignEconConditionText = "Test foreignEconCondition";
+//
+//
+// }
 
 var writeEffectCalc = function(crops) {
   var selector = crops.selector,
