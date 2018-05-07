@@ -19,7 +19,7 @@ function openStats(evt, construct) {
         sideNavLinks[i].className = sideNavLinks[i].className.replace(" active", "");
     }
 
-    tabID = document.getElementById(construct);
+    tabID = getEl(construct);
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     tabID.style.display = "block";

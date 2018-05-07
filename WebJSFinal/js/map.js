@@ -100,6 +100,7 @@ mymap.on('click', onMapClick);
 var argentina = L.marker([-34.603684, -58.381559], {
 	icon: blackIcon
 }).addTo(mymap).on('click', function () {
+  openStats(event, 'argentina');
   sidebar.toggle();
 });
 var bolivia = L.marker([-16.489689, -68.119294], {
@@ -130,6 +131,7 @@ var costaRica = L.marker([9.928069, -84.090725], {
 var cuba = L.marker([23.113592, -82.366596], {
 	icon: redIcon
 }).addTo(mymap).on('click', function () {
+  openStats(event, 'cuba');
   sidebar.toggle();
 });
 var dominicanRepublic = L.marker([18.765850, -69.040668], {
@@ -341,7 +343,6 @@ L.Control.Sidebar = L.Control.extend({
 
             L.DomEvent.off(close, 'click', this.hide, this);
         }
-
         return this;
     },
 
@@ -441,3 +442,70 @@ setTimeout(function () {
 mymap.on('click', function () {
     sidebar.hide();
 })
+
+
+
+
+
+
+var getEl = function (id) {
+  return document.getElementById(id);
+}
+
+var countries = [
+  {
+    name: 'Cuba',
+    population: 10
+  },
+  {
+    name: 'Argentina',
+    population: 20
+  }
+];
+
+function Country(countries) {
+  this.name = countries.name;
+  this.population = countries.population;
+}
+
+function writeCountry(newCountry) {
+  var nameContent = document.createTextNode(newCountry.name);
+  var nameDiv = document.createElement("div");
+  var nameH2El = document.createElement("h2");
+
+  nameH2El.appendChild(nameContent);
+  nameDiv.appendChild(nameH2El);
+
+  if (newCountry.name == "Cuba")
+  {
+    getEl("cuba").appendChild(nameH2El);
+    getEl("cuba").style.display = "none";
+  }
+  else if (newCountry.name == "Argentina")
+  {
+    getEl("argentina").appendChild(nameH2El);
+    getEl("argentina").style.display = "none";
+  }
+}
+
+for (var i = 0; i < countries.length; i++) {
+  var newCountry = new Country(countries[i]);
+    writeCountry(newCountry);
+}
+
+function openStats(evt, construct) {
+    // Declared variables
+    var i, tabcontent;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tabID = getEl(construct);
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    tabID.style.display = "block";
+    evt.currentTarget.className += " active";
+}
