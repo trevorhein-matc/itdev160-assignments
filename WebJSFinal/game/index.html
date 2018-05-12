@@ -210,8 +210,8 @@ td<!DOCTYPE html>
                 <td id="c4-foreignValue">?</td>
               </tr>
               <tr>
-                <td><button type="button" class="btn btn-default" onclick="EffectCalcButton()">Sell Domestic</button></td>
-                <td><button type="button" class="btn btn-default" onclick="EffectCalcButton()">Sell Foreign</button></td>
+                <td><button type="button" class="btn btn-default" onclick="EffectCalcButton();SellDomButton();writeDomNetValue();">Sell Domestic</button></td>
+                <td><button type="button" class="btn btn-default" onclick="EffectCalcButton();SellForeignButton();writeForeignNetValue();">Sell Foreign</button></td>
               </tr>
             </table>
           </div>
@@ -246,6 +246,9 @@ td<!DOCTYPE html>
           </div>
           <div class="row">
             <h2>Cash in Bank</h2>
+          </div>
+          <div class="row">
+            <h3 id="cashRemaining"></h3>
           </div>
         </div>
       </div>

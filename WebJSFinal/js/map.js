@@ -69,34 +69,6 @@ var blackIcon = new L.Icon({
 	shadowSize: [41, 41]
 });
 
-/*
-var popup = L.popup()
-    .setLatLng([18.23, -72.56])
-    .setContent("I am a standalone popup.")
-    .openOn(mymap);
-
-function onMapClick(e) {
-    alert("You clicked the map at " + e.latlng);
-}
-
-mymap.on('click', onMapClick);
-
-
-
-var popup = L.popup();
-
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
-}
-
-mymap.on('click', onMapClick);
-*/
-
-
-
 var argentina = L.marker([-34.603684, -58.381559], {
 	icon: blackIcon
 }).addTo(mymap).on('click', function () {
@@ -211,13 +183,9 @@ var venezuela = L.marker([10.480594, -66.903606], {
 });
 
 var allCountries = L.layerGroup([argentina, bolivia, brazil, chile, colombia, costaRica, cuba, dominicanRepublic, ecuador, elSalvador, guatemala, haiti, honduras, jamaica, mexico, nicaragua, panama, paraguay, peru, puertoRico, uruguay, venezuela]);
-
 var economic = L.layerGroup([brazil, costaRica, dominicanRepublic, ecuador, haiti, jamaica, panama]);
-
 var political = L.layerGroup([argentina, bolivia, paraguay, peru, puertoRico, uruguay, venezuela]);
-
 var military = L.layerGroup([colombia, chile, cuba, elSalvador, guatemala, honduras, mexico, nicaragua]);
-
 var overlayMaps = {
     "All": allCountries,
     "Economic": economic,
@@ -227,7 +195,9 @@ var overlayMaps = {
 
 L.control.layers(overlayMaps, null).addTo(mymap)
 
-cuba.bindPopup("<b>Hello world!</b><br>I am a popup.");
+// Attaches a super simple popup to cuba
+
+cuba.bindPopup("<b>Hello world!</b><br>This is Cuba.");
 
 // Adding sidenav with functions
 
@@ -443,11 +413,6 @@ mymap.on('click', function () {
     sidebar.hide();
 })
 
-
-
-
-
-
 var getEl = function (id) {
   return document.getElementById(id);
 }
@@ -455,35 +420,82 @@ var getEl = function (id) {
 var countries = [
   {
     name: 'Cuba',
-    population: 10
+    population: 10,
+		gdp: 12,
+		independence: 1687,
+		stability: 'High'
   },
   {
     name: 'Argentina',
-    population: 20
-  }
+    population: 20,
+		gdp: 14,
+		independence: 1687,
+		stability: 'High'
+	}
 ];
 
 function Country(countries) {
   this.name = countries.name;
   this.population = countries.population;
+	this.gdp = countries.gdp;
+	this.independence = countries.independence;
+	this.stability = countries.stability;
+
+	this.getFormattedPop = function() {
+		return this.population.toLocaleString();
+	};
+
+	this.getFormattedGdp = function() {
+		return this.gdp.toLocaleString();
+	};
+
+	this.getFormattedInd = function() {
+		return this.independence.toLocaleString();
+	};
 }
 
 function writeCountry(newCountry) {
   var nameContent = document.createTextNode(newCountry.name);
-  var nameDiv = document.createElement("div");
-  var nameH2El = document.createElement("h2");
+	var popContent = document.createTextNode("Population: " + newCountry.getFormattedPop());
+	var gdpContent = document.createTextNode("GDP: " + newCountry.getFormattedGdp());
+	var indContent = document.createTextNode("Independence: " + newCountry.getFormattedInd());
+	var staContent = document.createTextNode("Stability: " + newCountry.stability);
+	var countryDiv = document.createElement("div");
+	var nameRowEl = document.createElement("row");
+	var popRowEl = document.createElement("row");
+	var gdpRowEl = document.createElement("row");
+	var indRowEl = document.createElement("row");
+	var staRowEl = document.createElement("row");
+	var nameH2El = document.createElement("h1");
+	var popH3El = document.createElement("h3");
+	var indH3El = document.createElement("h3");
+	var gdpH3El = document.createElement("h3");
+	var staH3El = document.createElement("h3");
 
   nameH2El.appendChild(nameContent);
-  nameDiv.appendChild(nameH2El);
+  nameRowEl.appendChild(nameH2El);
+	popH3El.appendChild(popContent);
+	popRowEl.appendChild(popH3El);
+	indH3El.appendChild(indContent);
+	indRowEl.appendChild(indH3El);
+	gdpH3El.appendChild(gdpContent);
+	gdpRowEl.appendChild(gdpH3El);
+	staH3El.appendChild(staContent);
+	staRowEl.appendChild(staH3El);
+	countryDiv.appendChild(nameRowEl);
+	countryDiv.appendChild(popRowEl);
+	countryDiv.appendChild(indRowEl);
+	countryDiv.appendChild(staRowEl);
+	countryDiv.appendChild(gdpRowEl);
 
   if (newCountry.name == "Cuba")
   {
-    getEl("cuba").appendChild(nameH2El);
+    getEl("cuba").appendChild(countryDiv);
     getEl("cuba").style.display = "none";
   }
   else if (newCountry.name == "Argentina")
   {
-    getEl("argentina").appendChild(nameH2El);
+    getEl("argentina").appendChild(countryDiv);
     getEl("argentina").style.display = "none";
   }
 }

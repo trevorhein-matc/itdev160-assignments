@@ -712,6 +712,49 @@ var EffectCalcButton = function () {
   }
 }
 
+var writeDomCalcEffect = function(crops) {
+  var selector = crops.selector,
+    netValueEl = getEl(selector + '-netValue')
+    netValueEl.textContent = crops.getFormattedDomValue();
+}
+
+var SellDomButton = function () {
+  for (var i = 0; i < crops.length; i++){
+    var crop = new Crop(crops[i]);
+    writeDomCalcEffect(crop);
+  }
+}
+
+var writeForeignCalcEffect = function(crops) {
+  var selector = crops.selector,
+    netValueEl = getEl(selector + '-netValue')
+    netValueEl.textContent = crops.getFormattedForeignValue();
+}
+
+var SellForeignButton = function () {
+  for (var i = 0; i < crops.length; i++) {
+    var crop = new Crop(crops[i]);
+    writeDomCalcEffect(crop);
+  }
+}
+
+var writeDomNetValue = function () {
+  var domTotalValue = 0;
+  for (var t = 0; t < crops.length; t++){
+    domTotalValue = domTotalValue + crops[t].domValue;
+  }
+  cashRemainingEl = getEl('cashRemaining')
+  cashRemainingEl.innerHTML = domTotalValue;
+}
+
+var writeForeignNetValue = function () {
+  var foreignTotalValue = 0;
+  for (var i = 0; i < crops.length; i++){
+    foreignTotalValue = foreignTotalValue + crops[i].foreignValue;
+  }
+  cashRemainingEl = getEl('cashRemaining')
+  cashRemainingEl.innerHTML = foreignTotalValue;
+}
 
 /*
 var years = [];

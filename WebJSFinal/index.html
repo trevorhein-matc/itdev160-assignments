@@ -85,6 +85,41 @@
           </div>
         </div>
       </div>
+      <div class="container">
+      <header id="subheader">
+        <h3>Contact Us</h3>
+      </header>
+      <form action="php/sendmail.php" method="post" name="contact_form" id="contact_form">
+        <fieldset>
+          <legend>Contact Information</legend>
+          <label for="first_name">First Name:</label>
+          <input type="text" name="first_name" id="first_name" required><br>
+          <label for="last_name">Last Name:</label>
+          <input type="text" name="last_name" id="last_name" required><br>
+          <label for="email">Email Address:</label>
+          <input type="email" name="email" id="email" required><br>
+          <label for="verify">Verify Email:</label>
+          <input type="email" name="verify" id="verify" required autocomplete="off"><br>
+          <label for="phone">Phone Number:</label>
+          <input type="tel" name="phone" id="phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="999-999-9999" required><br>
+        </fieldset>
+        <fieldset>
+          <legend>Message Information</legend>
+          <label for="today_date">Today's  Date:</label>
+          <input type="date" name="today_date" id="today_date" required><br>
+          <label for="subject">Subject:</label>
+          <input type="text" name="subject" id="subject" required><br>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </fieldset>
+          <fieldset id="buttons">
+          <legend>Submit Your Email Message</legend>
+          <label>&nbsp;</label>
+          <input type="submit" id="submit" value="Send Email">
+          <input type="reset" id="reset" value="Reset"><br>
+        </fieldset>
+      </form>
+      </div>
     </main>
 
     <script src="js/nav.js" charset="utf-8"></script>
